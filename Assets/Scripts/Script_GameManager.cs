@@ -14,6 +14,9 @@ public class Script_GameManager : MonoBehaviour
     public int playerCount = 2;
     public int decalage = 0;
 
+    public int normalRockLife = 2;
+    public int rareRockLife = 3;
+
     public Transform gridParent;
     private int currentDecal = 0;
 
@@ -44,7 +47,7 @@ public class Script_GameManager : MonoBehaviour
             Destroy(this);
         }
 
-         
+
     }
 
     // Start is called before the first frame update
@@ -79,7 +82,7 @@ public class Script_GameManager : MonoBehaviour
 
     void AttributeBaseMap()
     {
-        for(int i = 0; i < playersGrids[0].gridCells.Count; i++)
+        for (int i = 0; i < playersGrids[0].gridCells.Count; i++)
         {
             if (playersGrids[0].gridCells[i].cellPosition.x >= playersStartCell.x - playersStartSpace && playersGrids[0].gridCells[i].cellPosition.x <= playersStartCell.x + playersStartSpace
                 && playersGrids[0].gridCells[i].cellPosition.y >= playersStartCell.y - playersStartSpace && playersGrids[0].gridCells[i].cellPosition.y <= playersStartCell.y + playersStartSpace)
@@ -101,10 +104,10 @@ public class Script_GameManager : MonoBehaviour
             }
         }
     }
-    
+
     void SpawnMap()
     {
-        foreach(Cell cells in playersGrids[0].gridCells)
+        foreach (Cell cells in playersGrids[0].gridCells)
         {
             SpawnRock(0, GetCellByPostion(0, cells.cellPosition).cellPosition, cells.cellType);
         }
@@ -112,22 +115,23 @@ public class Script_GameManager : MonoBehaviour
 
     void DuplicateMap()
     {
-            Transform newGridInst = Instantiate(gridParent, new Vector2(gridSize.x + 500f, 0), Quaternion.identity);
-            Grid newGrid = new Grid();
-            
-            //newGrid.gridCells = new List<Cell>(playersGrids[0].gridCells);
+        Transform newGridInst = Instantiate(gridParent, new Vector2(gridSize.x + 500f, 0), Quaternion.identity);
+        Grid newGrid = new Grid();
 
-           for(int j = 0; j < newGridInst.childCount; j++)
+        //newGrid.gridCells = new List<Cell>(playersGrids[0].gridCells);
+
+        for (int j = 0; j < newGridInst.childCount; j++)
         {
             Cell newCell = new Cell();
             newCell.cellGameObject = newGridInst.GetChild(j).gameObject;
             newCell.cellPosition = playersGrids[0].gridCells[j].cellPosition;
             newCell.cellName = playersGrids[0].gridCells[j].cellName;
             newCell.cellType = playersGrids[0].gridCells[j].cellType;
+            newCell.rockLife = playersGrids[0].gridCells[j].rockLife;
             newGrid.gridCells.Add(newCell);
-           }
+        }
 
-            playersGrids.Add(newGrid);
+        playersGrids.Add(newGrid);
     }
 
     void SpawnPlayers()
@@ -139,13 +143,13 @@ public class Script_GameManager : MonoBehaviour
             newPlayer.GetComponent<Script_ControlManager>().SetPlayerNum(i);
             newPlayer.GetComponent<Script_ControlManager>().SetPlayerCell(GetCellByPostion(i, playersStartCell));
             cameraPlayerOne[i].position = new Vector3(newPlayer.transform.position.x, newPlayer.transform.position.y, -10f);
-            
+
         }
     }
 
     void AttributeBedRock()
     {
-        for(int x = 0; x < gridSize.x / decalage; x++)
+        for (int x = 0; x < gridSize.x / decalage; x++)
         {
             for (int i = currentDecal; i < gridSize.x - currentDecal; i++)
             {
@@ -157,7 +161,7 @@ public class Script_GameManager : MonoBehaviour
 
             currentDecal += decalage;
         }
-       
+
     }
 
     public Cell GetCellByPostion(int playerGrid, Vector2 cellPos)
@@ -168,33 +172,52 @@ public class Script_GameManager : MonoBehaviour
     public void SpawnRock(int playerGrid, Vector2 cellPos, CellType newCellType)
     {
         Cell newCell = GetCellByPostion(playerGrid, cellPos);
-
-        if(newCell.cellGameObject != null)
+        Vector2 cellSpawnPos;
+        if (newCell.cellGameObject != null)
         {
+            cellSpawnPos = newCell.cellGameObject.transform.position;
             Destroy(newCell.cellGameObject);
+        }
+        else
+        {
+            cellSpawnPos = newCell.cellPosition;
         }
 
         switch (newCellType)
         {
             case CellType.Bedrock:
-                newCell.cellGameObject = Instantiate(prefabBedRock, newCell.cellPosition, Quaternion.identity, gridParent);
+                newCell.cellGameObject = Instantiate(prefabBedRock, cellSpawnPos, Quaternion.identity, gridParent);
                 newCell.cellType = CellType.Bedrock;
                 break;
 
             case CellType.Empty:
-                newCell.cellGameObject = Instantiate(prefabGround, newCell.cellPosition, Quaternion.identity, gridParent);
+                newCell.cellGameObject = Instantiate(prefabGround, cellSpawnPos, Quaternion.identity, gridParent);
                 newCell.cellType = CellType.Empty;
                 break;
 
             case CellType.Normal:
-                newCell.cellGameObject = Instantiate(prefabNormalRock, newCell.cellPosition, Quaternion.identity, gridParent);
+                newCell.cellGameObject = Instantiate(prefabNormalRock, cellSpawnPos, Quaternion.identity, gridParent);
                 newCell.cellType = CellType.Normal;
+                newCell.rockLife = normalRockLife;
                 break;
 
             case CellType.Rare:
-                newCell.cellGameObject = Instantiate(prefabRareRock, newCell.cellPosition, Quaternion.identity, gridParent);
+                newCell.cellGameObject = Instantiate(prefabRareRock, cellSpawnPos, Quaternion.identity, gridParent);
                 newCell.cellType = CellType.Rare;
+                newCell.rockLife = rareRockLife;
                 break;
+        }
+    }
+
+    public void DamageARock(Vector2 cellPos, int damage, int playerIdx)
+    {
+        Cell cellDig = GetCellByPostion(playerIdx, cellPos);
+        cellDig.rockLife -= damage;
+        Debug.Log(cellDig.rockLife);
+
+        if(cellDig.rockLife <= 0)
+        {
+            SpawnRock(playerIdx, cellDig.cellPosition, CellType.Empty);
         }
     }
 }
@@ -206,6 +229,7 @@ public class Cell
     public Vector2 cellPosition;
     public GameObject cellGameObject;
     public CellType cellType;
+    public int rockLife = 1;
 }
 
 [System.Serializable]
