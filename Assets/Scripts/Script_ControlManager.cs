@@ -69,10 +69,11 @@ public class Script_ControlManager : MonoBehaviour
                     StartCoroutine(WaitToMove());
                 }
             }
-            else if(Input.GetButtonDown("Ps4_Miner_" + playerDwarf))
-            {
-                Mine();
-            }
+        }
+
+        if (Input.GetButtonDown("Ps4_Miner_" + playerDwarf))
+        {
+            Mine();
         }
     }
 
