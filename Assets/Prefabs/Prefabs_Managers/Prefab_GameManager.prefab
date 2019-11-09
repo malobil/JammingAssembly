@@ -43,11 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c45f160b2e07214594d13176725fac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: {x: 100, y: 100}
-  playersStartSpace: 3
+  gridSize: {x: 50, y: 50}
+  playersStartSpace: 1
   gridCellSize: 1
   playerCount: 2
-  decalage: 10
+  decalage: 5
+  normalRockLife: 2
+  rareRockLife: 3
   gridParent: {fileID: 0}
   prefabNormalRock: {fileID: 7552076401444844458, guid: 45cd61691891d0a418d397ab92167794,
     type: 3}
