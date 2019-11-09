@@ -6,8 +6,10 @@ public enum CellType { Empty, Normal, Rare, Bedrock }
 
 public class Script_GameManager : MonoBehaviour
 {
+    public static Script_GameManager Instance { get; private set; }
+
     public Vector2 gridSize = new Vector2(10, 10);
-    public int playersStartCells = 5;
+    public int playersStartSpace = 5;
     public float gridCellSize = 64f;
     public int playerCount = 2;
 
@@ -24,6 +26,18 @@ public class Script_GameManager : MonoBehaviour
 
     private List<Grid> playersGrids = new List<Grid>();
     private Vector2 playersStartCell;
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -49,8 +63,8 @@ public class Script_GameManager : MonoBehaviour
                 newGrid.gridCells.Add(newCell);
 
 
-                if (x >= playersStartCell.x - playersStartCells && x <= playersStartCell.x + playersStartCells
-                 && y >= playersStartCell.y - playersStartCells && y <= playersStartCell.y + playersStartCells)
+                if (x >= playersStartCell.x - playersStartSpace && x <= playersStartCell.x + playersStartSpace
+                 && y >= playersStartCell.y - playersStartSpace && y <= playersStartCell.y + playersStartSpace)
                 {
                     newCell.cellType = CellType.Empty;
                     newCellInst = Instantiate(prefabGround, new Vector2(x * gridCellSize, y * gridCellSize), Quaternion.identity);
@@ -93,8 +107,14 @@ public class Script_GameManager : MonoBehaviour
     {
         for(int i = 0; i < playerCount; i++)
         {
-           // Instantiate(prefabPlayer,)
+            Debug.Log(GetCellByPostion(i,playersStartCell));
+            Instantiate(prefabPlayer, GetCellByPostion(i, playersStartCell).cellGameObject.transform.position, Quaternion.identity);
         }
+    }
+
+    public Cell GetCellByPostion(int playerGrid, Vector2 cellPos)
+    {
+        return playersGrids[playerGrid].gridCells.Find(x => x.cellPosition == playersStartCell) ;
     }
 }
 
