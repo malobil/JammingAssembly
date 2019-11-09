@@ -68,7 +68,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9999
   m_Sprite: {fileID: 21300000, guid: be8226844a9b7a6499687a73993b9b98, type: 3}
   m_Color: {r: 0.8962264, g: 0.80112624, b: 0.004227493, a: 1}
   m_FlipX: 0
@@ -125,5 +125,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDwarf: 0
-  playerPosition: {x: 0, y: 0}
-  canMove: 1
+  playerDamage: 1
+  playerCurrentCell:
+    cellName: 
+    cellPosition: {x: 0, y: 0}
+    cellGameObject: {fileID: 0}
+    cellType: 0
+    rockLife: 1
