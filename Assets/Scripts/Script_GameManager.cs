@@ -114,7 +114,7 @@ public class Script_GameManager : MonoBehaviour
 
     public Cell GetCellByPostion(int playerGrid, Vector2 cellPos)
     {
-        return playersGrids[playerGrid].gridCells.Find(x => x.cellPosition == playersStartCell) ;
+        return playersGrids[playerGrid].gridCells.Find(x => x.cellPosition == cellPos) ;
     }
 }
 
