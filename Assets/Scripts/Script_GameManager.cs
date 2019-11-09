@@ -12,6 +12,10 @@ public class Script_GameManager : MonoBehaviour
     public int playersStartSpace = 5;
     public float gridCellSize = 64f;
     public int playerCount = 2;
+    public int decalage = 0;
+
+    public Transform gridParent;
+    private int currentDecal = 0;
 
     public GameObject prefabNormalRock;
     public GameObject prefabGround;
@@ -19,6 +23,8 @@ public class Script_GameManager : MonoBehaviour
     public GameObject prefabBedRock;
 
     public GameObject prefabPlayer;
+
+    public List<Transform> cameraPlayerOne;
 
 
     [Range(0, 100)]
@@ -29,7 +35,7 @@ public class Script_GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -37,19 +43,19 @@ public class Script_GameManager : MonoBehaviour
         {
             Destroy(this);
         }
+
+         CreateGrid();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        CreateGrid();
+       
     }
 
     void CreateGrid()
     {
-        playersStartCell = new Vector2(Mathf.FloorToInt(gridSize.x/2), Mathf.FloorToInt(gridSize.y/2));
-        GameObject gridBaseParent = new GameObject();
-        gridBaseParent.name = "PlayerGrid";
+        playersStartCell = new Vector2(Mathf.FloorToInt(gridSize.x / 2), Mathf.FloorToInt(gridSize.y / 2));
         Grid newGrid = new Grid();
 
         for (int x = 0; x < gridSize.x; x++)
@@ -67,7 +73,7 @@ public class Script_GameManager : MonoBehaviour
                  && y >= playersStartCell.y - playersStartSpace && y <= playersStartCell.y + playersStartSpace)
                 {
                     newCell.cellType = CellType.Empty;
-                    newCellInst = Instantiate(prefabGround, new Vector2(x * gridCellSize, y * gridCellSize), Quaternion.identity);
+                    newCellInst = Instantiate(prefabGround, new Vector2(x * gridCellSize, y * gridCellSize), Quaternion.identity,gridParent);
                 }
                 else
                 {
@@ -75,18 +81,17 @@ public class Script_GameManager : MonoBehaviour
 
                     if (rdm <= chanceRareRock)
                     {
-                        newCellInst = Instantiate(prefabRareRock, new Vector2(x * gridCellSize, y * gridCellSize), Quaternion.identity);
+                        newCellInst = Instantiate(prefabRareRock, new Vector2(x * gridCellSize, y * gridCellSize), Quaternion.identity, gridParent);
                         newCell.cellType = CellType.Rare;
                     }
                     else
                     {
-                        newCellInst = Instantiate(prefabNormalRock, new Vector2(x * gridCellSize, y * gridCellSize), Quaternion.identity);
+                        newCellInst = Instantiate(prefabNormalRock, new Vector2(x * gridCellSize, y * gridCellSize), Quaternion.identity, gridParent);
                         newCell.cellType = CellType.Normal;
                     }
                 }
-                
+
                 newCellInst.name = newCell.cellName;
-                newCellInst.transform.SetParent(gridBaseParent.transform);
                 newCell.cellGameObject = newCellInst;
 
             }
@@ -94,27 +99,65 @@ public class Script_GameManager : MonoBehaviour
 
         playersGrids.Add(newGrid);
 
-        for (int i = 0; i < playerCount - 1; i++)
+        for (int i = 0; i < gridSize.x; i++)
         {
-            Instantiate(gridBaseParent, new Vector2(gridSize.x + 100f, 0), Quaternion.identity);
-            playersGrids.Add(playersGrids[0]);
+            SpawnBedRock();
         }
+
+        Instantiate(gridParent, new Vector2(gridSize.x + 100f, 0), Quaternion.identity);
+        playersGrids.Add(playersGrids[0]);
 
         SpawnPlayers();
     }
 
     void SpawnPlayers()
     {
-        for(int i = 0; i < playerCount; i++)
+        for (int i = 0; i < playerCount; i++)
         {
-            Debug.Log(GetCellByPostion(i,playersStartCell));
-            Instantiate(prefabPlayer, GetCellByPostion(i, playersStartCell).cellGameObject.transform.position, Quaternion.identity);
+            GameObject newPlayer = Instantiate(prefabPlayer, GetCellByPostion(i, playersStartCell).cellGameObject.transform.position, Quaternion.identity);
+            cameraPlayerOne[i].position = new Vector3(newPlayer.transform.position.x, newPlayer.transform.position.y, -10f);
         }
+    }
+
+    void SpawnBedRock()
+    {
+        for (int i = currentDecal; i < gridSize.x - currentDecal; i++)
+        {
+            Cell targetCellLeft = GetCellByPostion(0, new Vector2(currentDecal, i));
+            Cell targetCellRight = GetCellByPostion(0, new Vector2((gridSize.x-1)- currentDecal, i));
+            Cell targetCellUp = GetCellByPostion(0, new Vector2(i, currentDecal));
+            Cell targetCellDown = GetCellByPostion(0, new Vector2(i, (gridSize.y - 1) - currentDecal));
+
+
+            targetCellLeft.cellGameObject.transform.SetParent(null);
+            targetCellRight.cellGameObject.transform.SetParent(null);
+            targetCellUp.cellGameObject.transform.SetParent(null);
+            targetCellDown.cellGameObject.transform.SetParent(null);
+
+            Destroy(targetCellLeft.cellGameObject);
+            Destroy(targetCellRight.cellGameObject);
+            Destroy(targetCellUp.cellGameObject);
+            Destroy(targetCellDown.cellGameObject);
+
+            targetCellLeft.cellGameObject = Instantiate(prefabBedRock, targetCellLeft.cellGameObject.transform.position, Quaternion.identity, gridParent);
+            targetCellRight.cellGameObject = Instantiate(prefabBedRock, targetCellRight.cellGameObject.transform.position, Quaternion.identity, gridParent);
+            targetCellUp.cellGameObject = Instantiate(prefabBedRock, targetCellUp.cellGameObject.transform.position, Quaternion.identity, gridParent);
+            targetCellDown.cellGameObject = Instantiate(prefabBedRock, targetCellDown.cellGameObject.transform.position, Quaternion.identity, gridParent);
+
+            targetCellDown.cellType = CellType.Bedrock;
+            targetCellUp.cellType = CellType.Bedrock;
+            targetCellLeft.cellType = CellType.Bedrock;
+            targetCellRight.cellType = CellType.Bedrock;
+        }
+
+        currentDecal += decalage;
+
+        Debug.Log("spawn bed");
     }
 
     public Cell GetCellByPostion(int playerGrid, Vector2 cellPos)
     {
-        return playersGrids[playerGrid].gridCells.Find(x => x.cellPosition == cellPos) ;
+        return playersGrids[playerGrid].gridCells.Find(x => x.cellPosition == cellPos);
     }
 }
 
@@ -123,7 +166,7 @@ public class Cell
 {
     public string cellName;
     public Vector2 cellPosition;
-    public GameObject cellGameObject ;
+    public GameObject cellGameObject;
     public CellType cellType;
 }
 
