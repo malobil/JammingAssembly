@@ -1,0 +1,604 @@
+fileFormatVersion: 2
+guid: 5a559d8f18d50b348820e5f06d8faf3f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8423891367197777584
+    second: Garbage_Block_0
+  - first:
+      213: 6801088302144910700
+    second: Garbage_Block_1
+  - first:
+      213: 7099343967996742033
+    second: Garbage_Block_2
+  - first:
+      213: -6169310153247661118
+    second: Garbage_Block_3
+  - first:
+      213: 2207609239951984170
+    second: Garbage_Block_4
+  - first:
+      213: 8354284399698990185
+    second: Garbage_Block_5
+  - first:
+      213: 1182103378332265437
+    second: Garbage_Block_6
+  - first:
+      213: 8190605311687279517
+    second: Garbage_Block_7
+  - first:
+      213: 4082602978882671957
+    second: Garbage_Block_8
+  - first:
+      213: -3235444205276106929
+    second: Garbage_Block_9
+  - first:
+      213: -6562419587107961937
+    second: Garbage_Block_10
+  - first:
+      213: 7913771819252789923
+    second: Garbage_Block_11
+  - first:
+      213: 9208786738130812306
+    second: Garbage_Block_12
+  - first:
+      213: 8712866729344281221
+    second: Garbage_Block_13
+  - first:
+      213: 8276872350013920764
+    second: Garbage_Block_14
+  - first:
+      213: -6702756488225800423
+    second: Garbage_Rock_0
+  - first:
+      213: 5605958928105252973
+    second: Garbage_Rock_1
+  - first:
+      213: 1498774414412836323
+    second: Garbage_Rock_2
+  - first:
+      213: 2130278690740355868
+    second: Garbage_Rock_3
+  - first:
+      213: -5263127672714949886
+    second: Garbage_Rock_4
+  - first:
+      213: -8039021197132569086
+    second: Garbage_Rock_5
+  - first:
+      213: -6245081680773752770
+    second: Garbage_Rock_6
+  - first:
+      213: 2293052513586576446
+    second: Garbage_Rock_7
+  - first:
+      213: -7857995150256023870
+    second: Garbage_Rock_8
+  - first:
+      213: -4026726975380715282
+    second: Garbage_Rock_9
+  - first:
+      213: -166803731179545322
+    second: Garbage_Rock_10
+  - first:
+      213: 6419145225915334796
+    second: Garbage_Rock_11
+  - first:
+      213: 1197125572315778575
+    second: Garbage_Rock_12
+  - first:
+      213: 1990273106780381376
+    second: Garbage_Rock_13
+  - first:
+      213: -5804209724859820938
+    second: Garbage_Rock_14
+  - first:
+      213: 6762223085216682797
+    second: Garbage_Rock_15
+  - first:
+      213: 5644257987394616712
+    second: Garbage_Rock_16
+  - first:
+      213: 3056903422904990208
+    second: Garbage_Rock_17
+  - first:
+      213: 2324001117278359244
+    second: Garbage_Rock_18
+  - first:
+      213: -4960506615541597080
+    second: Garbage_Rock_19
+  - first:
+      213: 1077082403340454843
+    second: Garbage_Rock_20
+  - first:
+      213: 5219116794067871080
+    second: Garbage_Rock_21
+  - first:
+      213: -6269024448019296914
+    second: Garbage_Rock_22
+  - first:
+      213: -2082555289279336163
+    second: Garbage_Rock_23
+  - first:
+      213: 479900517287413167
+    second: Garbage_Rock_24
+  - first:
+      213: -8418883237135664268
+    second: Garbage_Rock_25
+  - first:
+      213: 422542363890980984
+    second: Garbage_Rock_26
+  - first:
+      213: -8515286898812315715
+    second: Garbage_Rock_27
+  - first:
+      213: 289902705717188157
+    second: Garbage_Rock_28
+  - first:
+      213: -1021240496708336875
+    second: Garbage_Rock_29
+  - first:
+      213: 7249229145338126656
+    second: Garbage_Rock_30
+  - first:
+      213: 7580480243900635776
+    second: Garbage_Rock_31
+  - first:
+      213: -2115074505370386456
+    second: Garbage_Rock_32
+  - first:
+      213: -4575580351102948823
+    second: Garbage_Rock_33
+  - first:
+      213: -5080479608443945884
+    second: Garbage_Rock_34
+  - first:
+      213: 1283731586392765713
+    second: Garbage_Rock_35
+  - first:
+      213: -322236890339400504
+    second: Garbage_Rock_36
+  - first:
+      213: -111363139565679274
+    second: Garbage_Rock_37
+  - first:
+      213: 5405088474983749496
+    second: Garbage_Rock_38
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Garbage_Rock_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8572b9af24ec324a80ad623aacb22d9
+      internalID: -6702756488225800423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garbage_Rock_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af9448d177147174baa3dca1fb3f4869
+      internalID: 5605958928105252973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garbage_Rock_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3d962031f762994aa0cbd2a3bced69f
+      internalID: 1498774414412836323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garbage_Rock_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20939174bee648a4fb5ec24d023e0247
+      internalID: 2130278690740355868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garbage_Rock_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 317cfc98b40fc42428a24ca020b561fe
+      internalID: -5263127672714949886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garbage_Rock_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d551b7620b6f08f4291be2765125239e
+      internalID: -8039021197132569086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garbage_Rock_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0060ec18a995f148b900cdc7443d89e
+      internalID: -6245081680773752770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garbage_Rock_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c05e7f463029344dac44e945112eb85
+      internalID: 2293052513586576446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garbage_Rock_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a559067d8ffec84a81ceaba6168b3f2
+      internalID: -7857995150256023870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garbage_Rock_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a5b1a44afebec44a679e0546ab6dda
+      internalID: -4026726975380715282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garbage_Rock_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92fd59811737ef94ab6802aed4985f6d
+      internalID: -166803731179545322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garbage_Rock_11
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d13fe640db08f9a46aae21cc4b49f56d
+      internalID: 6419145225915334796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garbage_Rock_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a2f7f9c780fa024eb63dcfe99ec3767
+      internalID: 1197125572315778575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garbage_Rock_13
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 266430bfbf2b6914eafcd2900def2b50
+      internalID: 1990273106780381376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garbage_Rock_14
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b12d2ba6c4839574882b5ed9004a005a
+      internalID: -5804209724859820938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

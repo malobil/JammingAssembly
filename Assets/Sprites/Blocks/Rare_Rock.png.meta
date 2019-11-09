@@ -1,52 +1,115 @@
 fileFormatVersion: 2
-guid: 5a559d8f18d50b348820e5f06d8faf3f
+guid: 69546ac12dd202b4eb5ab1542fbc52a2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8423891367197777584
-    second: Garbage_Block_0
+      213: -8892902434374377010
+    second: Rare_Block_0
   - first:
-      213: 6801088302144910700
-    second: Garbage_Block_1
+      213: -4211858939491966469
+    second: Rare_Block_1
   - first:
-      213: 7099343967996742033
-    second: Garbage_Block_2
+      213: 5752410697223418958
+    second: Rare_Block_2
   - first:
-      213: -6169310153247661118
-    second: Garbage_Block_3
+      213: -1475805250190617501
+    second: Rare_Block_3
   - first:
-      213: 2207609239951984170
-    second: Garbage_Block_4
+      213: -7537145281031791062
+    second: Rare_Block_4
   - first:
-      213: 8354284399698990185
-    second: Garbage_Block_5
+      213: 636568286056972945
+    second: Rare_Block_5
   - first:
-      213: 1182103378332265437
-    second: Garbage_Block_6
+      213: -6740770463221149360
+    second: Rare_Block_6
   - first:
-      213: 8190605311687279517
-    second: Garbage_Block_7
+      213: -5596421567484359986
+    second: Rare_Block_7
   - first:
-      213: 4082602978882671957
-    second: Garbage_Block_8
+      213: -4512540764674822915
+    second: Rare_Block_8
   - first:
-      213: -3235444205276106929
-    second: Garbage_Block_9
+      213: 1292660492731870213
+    second: Rare_Block_9
   - first:
-      213: -6562419587107961937
-    second: Garbage_Block_10
+      213: 4875689643640156593
+    second: Rare_Block_10
   - first:
-      213: 7913771819252789923
-    second: Garbage_Block_11
+      213: -7654503717986963500
+    second: Rare_Block_11
   - first:
-      213: 9208786738130812306
-    second: Garbage_Block_12
+      213: -4885005065057988002
+    second: Rare_Block_12
   - first:
-      213: 8712866729344281221
-    second: Garbage_Block_13
+      213: 8729826264238882958
+    second: Rare_Block_13
   - first:
-      213: 8276872350013920764
-    second: Garbage_Block_14
+      213: -4415170663300393217
+    second: Rare_Block_14
+  - first:
+      213: -397825810287551279
+    second: Rare_Block_15
+  - first:
+      213: 4454809098157477759
+    second: Rare_Block_16
+  - first:
+      213: 4094876961193161140
+    second: Rare_Block_17
+  - first:
+      213: 2417012288040063580
+    second: Rare_Rock_0
+  - first:
+      213: 4890456884150015159
+    second: Rare_Rock_1
+  - first:
+      213: -7400970709657493613
+    second: Rare_Rock_2
+  - first:
+      213: -7980760928051782832
+    second: Rare_Rock_3
+  - first:
+      213: 4253406451398827368
+    second: Rare_Rock_4
+  - first:
+      213: -2340645498224216128
+    second: Rare_Rock_5
+  - first:
+      213: -4132654604803488636
+    second: Rare_Rock_6
+  - first:
+      213: 770656496778657674
+    second: Rare_Rock_7
+  - first:
+      213: -6739303225422179655
+    second: Rare_Rock_8
+  - first:
+      213: -1599442226227974363
+    second: Rare_Rock_9
+  - first:
+      213: 4399974621682785468
+    second: Rare_Rock_10
+  - first:
+      213: -6174481975608718052
+    second: Rare_Rock_11
+  - first:
+      213: 2675260144273882178
+    second: Rare_Rock_12
+  - first:
+      213: -6204095563060347298
+    second: Rare_Rock_13
+  - first:
+      213: -8931193159295399379
+    second: Rare_Rock_14
+  - first:
+      213: 517548110361622840
+    second: Rare_Rock_15
+  - first:
+      213: 2058295376074287869
+    second: Rare_Rock_16
+  - first:
+      213: -1444414773319528780
+    second: Rare_Rock_17
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -155,7 +218,343 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Garbage_Block_0
+      name: Rare_Rock_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfe1aaa206dbfe04ba81724bfde987b0
+      internalID: 2417012288040063580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rare_Rock_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ded8500adf73c014eab1f00de754af17
+      internalID: 4890456884150015159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rare_Rock_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0e4953dbe2d62d4fa4a86cb80639f72
+      internalID: -7400970709657493613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rare_Rock_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48ef40ace96961e4195dad34081fe09d
+      internalID: -7980760928051782832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rare_Rock_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89de0071ba72e954781d730a26841297
+      internalID: 4253406451398827368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rare_Rock_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec0f91463145a3247a64c50339b42c7f
+      internalID: -2340645498224216128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rare_Rock_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c8078c45663a9d478e6b5a6eb8399e8
+      internalID: -4132654604803488636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rare_Rock_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 297ca3a6154466f469b36bbe342c7caa
+      internalID: 770656496778657674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rare_Rock_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35413707e9d0b4c49b9c30c466095d45
+      internalID: -6739303225422179655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rare_Rock_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c2628b4219c1964ebd73c8d46285814
+      internalID: -1599442226227974363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rare_Rock_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0229c1aa6d24214098d4e8ad5558e26
+      internalID: 4399974621682785468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rare_Rock_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9efa9a5c7d3c89640a16db2e760d71e5
+      internalID: -6174481975608718052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rare_Rock_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb334ad3c29395c49b7677f6a643c4ef
+      internalID: 2675260144273882178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rare_Rock_13
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1793a2a281133440a386c78810bd86f
+      internalID: -6204095563060347298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rare_Rock_14
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3473b3d67d3a28548bdc862995c224f7
+      internalID: -8931193159295399379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rare_Rock_15
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f94fc072e20977e47adbe8308ba083ec
+      internalID: 517548110361622840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rare_Rock_16
       rect:
         serializedVersion: 2
         x: 0
@@ -163,20 +562,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cefdf0dd34380a469d1e488d3b78a17
-      internalID: -8423891367197777584
+      spriteID: dfbd177baaf85cb4586636f1558efde5
+      internalID: 2058295376074287869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Garbage_Block_1
+      name: Rare_Rock_17
       rect:
         serializedVersion: 2
         x: 32
@@ -184,287 +583,14 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d27c3c3cf7b48f94e82cff7668599aef
-      internalID: 6801088302144910700
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garbage_Block_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a8b9173e7e0625148874d8b3a95c5b72
-      internalID: 7099343967996742033
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garbage_Block_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1330c8169f9c44b49b1169362cbe58df
-      internalID: -6169310153247661118
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garbage_Block_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 56ab9c7dae4447f46a6253afd735f0ad
-      internalID: 2207609239951984170
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garbage_Block_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: af6b96b9c326aed41b2b6d97c9177ea8
-      internalID: 8354284399698990185
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garbage_Block_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cfac177736b2a6e4b82e251a4c6fa6d9
-      internalID: 1182103378332265437
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garbage_Block_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eeee55e9739e7aa4dbd6e9b9ae434a4e
-      internalID: 8190605311687279517
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garbage_Block_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a64fbc7c197f8694e9b97d53272e4b10
-      internalID: 4082602978882671957
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garbage_Block_9
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a043bee074b9386498f44fb7b203d6a9
-      internalID: -3235444205276106929
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garbage_Block_10
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87f43b602ab0a634a805a50247a5be40
-      internalID: -6562419587107961937
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garbage_Block_11
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 03107fa6945e87d41aaee09abddb9e1f
-      internalID: 7913771819252789923
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garbage_Block_12
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6bb93d6e2b89c9a4781fc796c187cc67
-      internalID: 9208786738130812306
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garbage_Block_13
-      rect:
-        serializedVersion: 2
-        x: 416
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d3cd86c0413c34140974c5a1782c322e
-      internalID: 8712866729344281221
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Garbage_Block_14
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f954c072e62c97f4196aec857b5d0e1c
-      internalID: 8276872350013920764
+      spriteID: 7dd591c1764bbc44682c511c975575f5
+      internalID: -1444414773319528780
       vertices: []
       indices: 
       edges: []
