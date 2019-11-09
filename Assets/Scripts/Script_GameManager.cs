@@ -112,20 +112,22 @@ public class Script_GameManager : MonoBehaviour
 
     void DuplicateMap()
     {
-        for(int i = 1; i < playerCount; i++)
-        {
             Transform newGridInst = Instantiate(gridParent, new Vector2(gridSize.x + 500f, 0), Quaternion.identity);
-            playersGrids.Add(playersGrids[0]);
+            Grid newGrid = new Grid();
+            
+            //newGrid.gridCells = new List<Cell>(playersGrids[0].gridCells);
 
-            /*foreach(Cell cells in playersGrids[i].gridCells)
-            {
-                foreach(Transform child in newGridInst)
-                {
-                    cells.cellGameObject = child.gameObject;
-                }
-               
-            }*/
-        }
+           for(int j = 0; j < newGridInst.childCount; j++)
+        {
+            Cell newCell = new Cell();
+            newCell.cellGameObject = newGridInst.GetChild(j).gameObject;
+            newCell.cellPosition = playersGrids[0].gridCells[j].cellPosition;
+            newCell.cellName = playersGrids[0].gridCells[j].cellName;
+            newCell.cellType = playersGrids[0].gridCells[j].cellType;
+            newGrid.gridCells.Add(newCell);
+           }
+
+            playersGrids.Add(newGrid);
     }
 
     void SpawnPlayers()
@@ -135,7 +137,7 @@ public class Script_GameManager : MonoBehaviour
             Debug.Log(GetCellByPostion(i, playersStartCell).cellGameObject.transform.localPosition);
             GameObject newPlayer = Instantiate(prefabPlayer, GetCellByPostion(i, playersStartCell).cellGameObject.transform.position, Quaternion.identity);
             newPlayer.GetComponent<Script_ControlManager>().SetPlayerNum(i);
-            newPlayer.GetComponent<Script_ControlManager>().SetPlayerPostionOnGrid(GetCellByPostion(i, playersStartCell).cellPosition);
+            newPlayer.GetComponent<Script_ControlManager>().SetPlayerCell(GetCellByPostion(i, playersStartCell));
             cameraPlayerOne[i].position = new Vector3(newPlayer.transform.position.x, newPlayer.transform.position.y, -10f);
             
         }
@@ -161,11 +163,6 @@ public class Script_GameManager : MonoBehaviour
     public Cell GetCellByPostion(int playerGrid, Vector2 cellPos)
     {
         return playersGrids[playerGrid].gridCells.Find(x => x.cellPosition == cellPos);
-    }
-
-    void AttributeRock(int playerGrid, Vector2 cellPos, CellType newCellType)
-    {
-
     }
 
     public void SpawnRock(int playerGrid, Vector2 cellPos, CellType newCellType)

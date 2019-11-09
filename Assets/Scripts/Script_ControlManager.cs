@@ -6,7 +6,7 @@ public class Script_ControlManager : MonoBehaviour
 
 {
     public int playerDwarf;
-    public Vector2 playerGridPosition;
+    public Cell playerCurrentCell;
     private bool canMove = true;
 
     // Update is called once per frame
@@ -19,44 +19,53 @@ public class Script_ControlManager : MonoBehaviour
         {
             if (horizontal > 0f)
             {
-                if (Script_GameManager.Instance.GetCellByPostion(playerDwarf, new Vector2(playerGridPosition.x + 1, playerGridPosition.y)).cellType == CellType.Empty)
+                Cell rightCell = Script_GameManager.Instance.GetCellByPostion(playerDwarf, new Vector2(playerCurrentCell.cellPosition.x + 1, playerCurrentCell.cellPosition.y)) ;
+                if (rightCell.cellType == CellType.Empty)
                 {
-                    playerGridPosition = transform.position = new Vector2(playerGridPosition.x + Script_GameManager.Instance.gridCellSize, playerGridPosition.y);
+                    Debug.Log("droite");
+                    transform.position = new Vector2(rightCell.cellGameObject.transform.position.x, rightCell.cellGameObject.transform.position.y);
+                    playerCurrentCell = rightCell;
                     canMove = false;
                     StartCoroutine(WaitToMove());
                 }
-                Debug.Log("droite");
+               
             }
             else if (horizontal < 0f)
             {
-                if (Script_GameManager.Instance.GetCellByPostion(playerDwarf, new Vector2(playerGridPosition.x - 1, playerGridPosition.y)).cellType == CellType.Empty)
+                Cell leftCell = Script_GameManager.Instance.GetCellByPostion(playerDwarf, new Vector2(playerCurrentCell.cellPosition.x - 1, playerCurrentCell.cellPosition.y));
+                if (leftCell.cellType == CellType.Empty)
                 {
-                    playerGridPosition = transform.position = new Vector2(playerGridPosition.x - Script_GameManager.Instance.gridCellSize, playerGridPosition.y);
+                    Debug.Log("gauche");
+                    transform.position = new Vector2(leftCell.cellGameObject.transform.position.x, leftCell.cellGameObject.transform.position.y);
+                    playerCurrentCell = leftCell;
                     canMove = false;
                     StartCoroutine(WaitToMove());
                 }
-                Debug.Log("gauche");
             }
 
             if (vertical > 0f)
             {
-                if (Script_GameManager.Instance.GetCellByPostion(playerDwarf, new Vector2(playerGridPosition.x, playerGridPosition.y + 1)).cellType == CellType.Empty)
+                Cell upCell = Script_GameManager.Instance.GetCellByPostion(playerDwarf, new Vector2(playerCurrentCell.cellPosition.x, playerCurrentCell.cellPosition.y + 1));
+                if (upCell.cellType == CellType.Empty)
                 {
-                    playerGridPosition = transform.position = new Vector2(playerGridPosition.x, playerGridPosition.y + Script_GameManager.Instance.gridCellSize);
+                    Debug.Log("up");
+                    transform.position = new Vector2(upCell.cellGameObject.transform.position.x, upCell.cellGameObject.transform.position.y);
+                    playerCurrentCell = upCell;
                     canMove = false;
                     StartCoroutine(WaitToMove());
                 }
-                Debug.Log("Haut");
             }
             else if (vertical < 0f)
             {
-                if (Script_GameManager.Instance.GetCellByPostion(playerDwarf, new Vector2(playerGridPosition.x, playerGridPosition.y - 1)).cellType == CellType.Empty)
+                Cell downCell = Script_GameManager.Instance.GetCellByPostion(playerDwarf, new Vector2(playerCurrentCell.cellPosition.x, playerCurrentCell.cellPosition.y - 1));
+                if (downCell.cellType == CellType.Empty)
                 {
-                    playerGridPosition = transform.position = new Vector2(playerGridPosition.x, playerGridPosition.y - Script_GameManager.Instance.gridCellSize);
+                    Debug.Log("down");
+                    transform.position = new Vector2(downCell.cellGameObject.transform.position.x, downCell.cellGameObject.transform.position.y);
+                    playerCurrentCell = downCell;
                     canMove = false;
                     StartCoroutine(WaitToMove());
                 }
-                Debug.Log("Bas");
             }
         }
     }
@@ -66,9 +75,9 @@ public class Script_ControlManager : MonoBehaviour
         playerDwarf = playerIdx;
     }
 
-    public void SetPlayerPostionOnGrid(Vector2 playerPositionOnGrid)
+    public void SetPlayerCell(Cell startCell)
     {
-        playerGridPosition = playerPositionOnGrid;
+        playerCurrentCell = startCell;
     }
 
     IEnumerator WaitToMove()
