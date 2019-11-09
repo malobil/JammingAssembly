@@ -112,18 +112,30 @@ public class Script_GameManager : MonoBehaviour
 
     void DuplicateMap()
     {
-        for(int i = 0; i < playerCount-1; i++)
+        for(int i = 1; i < playerCount; i++)
         {
-            Instantiate(gridParent, new Vector2(gridSize.x + 100f * i, 0), Quaternion.identity);
+            Transform newGridInst = Instantiate(gridParent, new Vector2(gridSize.x + 500f, 0), Quaternion.identity);
             playersGrids.Add(playersGrids[0]);
+
+            /*foreach(Cell cells in playersGrids[i].gridCells)
+            {
+                foreach(Transform child in newGridInst)
+                {
+                    cells.cellGameObject = child.gameObject;
+                }
+               
+            }*/
         }
     }
 
     void SpawnPlayers()
     {
-        for (int i = 0; i < playerCount-1; i++)
+        for (int i = 0; i < playerCount; i++)
         {
-            GameObject newPlayer = Instantiate(prefabPlayer, GetCellByPostion(0, playersStartCell).cellGameObject.transform.position, Quaternion.identity);
+            Debug.Log(GetCellByPostion(i, playersStartCell).cellGameObject.transform.localPosition);
+            GameObject newPlayer = Instantiate(prefabPlayer, GetCellByPostion(i, playersStartCell).cellGameObject.transform.position, Quaternion.identity);
+            newPlayer.GetComponent<Script_ControlManager>().SetPlayerNum(i);
+            newPlayer.GetComponent<Script_ControlManager>().SetPlayerPostionOnGrid(GetCellByPostion(i, playersStartCell).cellPosition);
             cameraPlayerOne[i].position = new Vector3(newPlayer.transform.position.x, newPlayer.transform.position.y, -10f);
             
         }
@@ -142,8 +154,6 @@ public class Script_GameManager : MonoBehaviour
             }
 
             currentDecal += decalage;
-
-            Debug.Log("spawn bed");
         }
        
     }
