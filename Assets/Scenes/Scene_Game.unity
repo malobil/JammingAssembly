@@ -389,5 +389,25 @@ PrefabInstance:
       propertyPath: cameraPlayerOne.Array.data[1]
       value: 
       objectReference: {fileID: 109749946}
+    - target: {fileID: 259933993520226556, guid: 0341d247310bf494cb04959736cd4729,
+        type: 3}
+      propertyPath: gridSize.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 259933993520226556, guid: 0341d247310bf494cb04959736cd4729,
+        type: 3}
+      propertyPath: gridSize.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 259933993520226556, guid: 0341d247310bf494cb04959736cd4729,
+        type: 3}
+      propertyPath: decalage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 259933993520226556, guid: 0341d247310bf494cb04959736cd4729,
+        type: 3}
+      propertyPath: playersStartSpace
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0341d247310bf494cb04959736cd4729, type: 3}
