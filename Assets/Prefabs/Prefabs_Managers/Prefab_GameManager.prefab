@@ -43,13 +43,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c45f160b2e07214594d13176725fac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: {x: 50, y: 50}
+  gridSize: {x: 200, y: 200}
+  playersStartSpace: 3
   gridCellSize: 1
+  playerCount: 2
   prefabNormalRock: {fileID: 7552076401444844458, guid: 45cd61691891d0a418d397ab92167794,
+    type: 3}
+  prefabGround: {fileID: 4269820809045130370, guid: 1663012897549b84a91347c571891a9a,
     type: 3}
   prefabRareRock: {fileID: 4269820809045130370, guid: 2cf0461c26146b84ca86bee1f6e084ca,
     type: 3}
   prefabBedRock: {fileID: 4269820809045130370, guid: 67249c0a2809ce34f8590188a5579108,
     type: 3}
+  prefabPlayer: {fileID: 2337015711196691399, guid: d82a441cc76b62c4989e742f0902a811,
+    type: 3}
   chanceRareRock: 5
-  cellList: []
