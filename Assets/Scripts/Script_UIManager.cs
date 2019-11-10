@@ -12,14 +12,11 @@ public class Script_UIManager : MonoBehaviour
     public List<TextMeshProUGUI> playersGoldText;
 
     public GameObject endgameMenu;
-    public GameObject VictoryPlayer1;
-    public GameObject DeafeatPlayer1;
-    public GameObject VictoryPlayer2;
-    public GameObject DeafeatPlayer2;
+    public List<GameObject> endPanel;
+    public List<TextMeshProUGUI> scoreText;
+    public Sprite winSprite;
 
     public TextMeshProUGUI timerMeshPro;
-    public TextMeshProUGUI scoreMeshPlayer1;
-    public TextMeshProUGUI scoreMeshPlayer2;
 
     private void Awake()
     {
@@ -43,8 +40,21 @@ public class Script_UIManager : MonoBehaviour
         timerMeshPro.text = time.ToString("F0");
     }
 
-    public void ShowFinish()
+    public void ShowFinish(int winnerPlayerIdx, List<int> scores)
     {
+        for(int i = 0; i < endPanel.Count; i++)
+        {
+            if(winnerPlayerIdx == i)
+            {
+                endPanel[i].GetComponent<Image>().sprite = winSprite;
+            }
+        }
+
+        for (int i = 0; i < scoreText.Count; i++)
+        {
+            scoreText[i].text = scores[i].ToString() + "m²" ;
+        }
+
         endgameMenu.SetActive(true);
     }
 

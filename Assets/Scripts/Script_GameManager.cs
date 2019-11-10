@@ -70,6 +70,7 @@ public class Script_GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         CreateGrid();
         AttributeBaseMap();
         SpawnMap();
@@ -93,6 +94,25 @@ public class Script_GameManager : MonoBehaviour
 
     void EndGame()
     {
+        List<int> endScores = new List<int>();
+        int winnerIdx = 0;
+        int winnerScore = 0;
+
+        for(int i = 0; i < playerCount; i++)
+        {
+            int playerScore = GetPlayerEmptyCell(i);
+
+            if(playerScore > winnerScore)
+            {
+                winnerScore = playerScore;
+                winnerIdx = i;
+            }
+
+            endScores.Add(playerScore);
+        }
+
+        Script_UIManager.Instance.ShowFinish(winnerIdx, endScores);
+
         gameIsOver = true;
         Time.timeScale = 0;
     }
