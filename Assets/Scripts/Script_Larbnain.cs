@@ -10,6 +10,7 @@ public class Script_Larbnain : MonoBehaviour
     public float moveSpeed = 0.5f;
     public int playerDwarf;
     public Direction currentDirection;
+    public GameObject prefabExplosion;
 
     public Cell larbnainCurrentCell;
     private Cell targetCell;
@@ -102,6 +103,7 @@ public class Script_Larbnain : MonoBehaviour
         Script_GameManager.Instance.DamageARock(cellTopLeftPos, 999999, playerDwarf);
         Script_GameManager.Instance.DamageARock(cellTopRightPos, 999999, playerDwarf);
 
+        Instantiate(prefabExplosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 

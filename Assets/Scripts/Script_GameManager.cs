@@ -26,7 +26,6 @@ public class Script_GameManager : MonoBehaviour
     public int nainploseurCost = 10;
 
     public Transform gridParent;
-    private int currentDecal = 0;
 
     public GameObject prefabNormalRock;
     public GameObject prefabGround;
@@ -70,7 +69,6 @@ public class Script_GameManager : MonoBehaviour
     {
         CreateGrid();
         AttributeBaseMap();
-       // AttributeBedRock();
         SpawnMap();
         DuplicateMap();
         SpawnPlayers();
@@ -167,23 +165,6 @@ public class Script_GameManager : MonoBehaviour
         }
     }
 
-    void AttributeBedRock()
-    {
-        for (int x = 0; x < gridSize.x / decalage; x++)
-        {
-            for (int i = currentDecal; i < gridSize.x - currentDecal; i++)
-            {
-                GetCellByPostion(0, new Vector2(currentDecal, i)).cellType = CellType.Bedrock;
-                GetCellByPostion(0, new Vector2((gridSize.x - 1) - currentDecal, i)).cellType = CellType.Bedrock;
-                GetCellByPostion(0, new Vector2(i, currentDecal)).cellType = CellType.Bedrock;
-                GetCellByPostion(0, new Vector2(i, (gridSize.y - 1) - currentDecal)).cellType = CellType.Bedrock;
-            }
-
-            currentDecal += decalage;
-        }
-
-    }
-
     public Cell GetCellByPostion(int playerGrid, Vector2 cellPos)
     {
         return playersGrids[playerGrid].gridCells.Find(x => x.cellPosition == cellPos);
@@ -199,7 +180,6 @@ public class Script_GameManager : MonoBehaviour
         {
             cellSpawnPos = newCell.cellGameObject.transform.position;
             cellScreenPos = cameras[playerGrid].GetComponent<Camera>().WorldToViewportPoint(newCell.cellGameObject.transform.position);
-            Debug.Log(cellScreenPos);
 
             if(cellScreenPos.x <= 0.1f)
             {
@@ -218,7 +198,6 @@ public class Script_GameManager : MonoBehaviour
                 UnzoomCam(playerGrid);
             }
 
-            Debug.Log(cellScreenPos);
             Destroy(newCell.cellGameObject);
         }
         else
@@ -339,13 +318,27 @@ public class Script_GameManager : MonoBehaviour
             newLarbnain.GetComponent<Script_Larbnain>().SetVariables(targetCell, playerIdx, larbnainDirection);
             playersGold[playerIdx] -= larbnainCost;
             Script_UIManager.Instance.UpdateGoldText(playerIdx, playersGold[playerIdx]);
-
         }
     }
 
     void UnzoomCam(int playerIdx)
     {
         cameras[playerIdx].GetComponent<Camera>().orthographicSize += cameraUnzoomStep;
+    }
+
+    public int GetPlayerEmptyCell(int playerIdx)
+    {
+        int cellNum = 0;
+
+        foreach(Cell cells in playersGrids[playerIdx].gridCells)
+        {
+            if(cells.cellType == CellType.Empty)
+            {
+                cellNum++;
+            }
+        }
+
+        return cellNum;
     }
 }
 

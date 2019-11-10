@@ -151,6 +151,8 @@ MonoBehaviour:
   moveSpeed: 0.5
   playerDwarf: 0
   currentDirection: 0
+  prefabExplosion: {fileID: 8052183978148925942, guid: 39c09485bb7a84c498fb36cd7731496d,
+    type: 3}
   larbnainCurrentCell:
     cellName: 
     cellPosition: {x: 0, y: 0}
