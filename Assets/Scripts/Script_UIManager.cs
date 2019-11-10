@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Script_UIManager : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class Script_UIManager : MonoBehaviour
 
     public TextMeshProUGUI timerMeshPro;
 
+    public GameObject defaultSelection;
+
     private void Awake()
     {
         if(Instance == null)
@@ -28,6 +31,24 @@ public class Script_UIManager : MonoBehaviour
         {
             Destroy(this);
         }
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2))
+        {
+
+            CatchMouseClicks(defaultSelection);
+
+        }
+
+    }
+
+    public void CatchMouseClicks(GameObject setSelection)
+    {
+
+        EventSystem.current.SetSelectedGameObject(setSelection);
+
     }
 
     public void UpdateGoldText(int playerIdx, int goldValue)
