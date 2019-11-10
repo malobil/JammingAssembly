@@ -50,8 +50,10 @@ MonoBehaviour:
   decalage: 5
   normalRockLife: 2
   rareRockLife: 3
+  bedRockLife: 8
   normalRockGoldValue: 5
   rareRockGoldValue: 10
+  bedRockGoldValue: 15
   larbnainCost: 10
   nainploseurCost: 10
   gridParent: {fileID: 0}
@@ -68,7 +70,10 @@ MonoBehaviour:
   prefabPlayer: {fileID: 2337015711196691399, guid: d82a441cc76b62c4989e742f0902a811,
     type: 3}
   playersGold: 
-  cameraPlayerOne:
+  cameras:
   - {fileID: 0}
   - {fileID: 0}
-  chanceRareRock: 35
+  cameraUnzoomStep: 1.5
+  cameraUnzoomZone: 0
+  chanceRareRock: 25
+  chanceBedRock: 5

@@ -16,8 +16,11 @@ public class Script_GameManager : MonoBehaviour
 
     public int normalRockLife = 2;
     public int rareRockLife = 3;
+    public int bedRockLife = 5;
     public int normalRockGoldValue = 5;
-    public int rareRockGoldValue = 5;
+    public int rareRockGoldValue = 10;
+    public int bedRockGoldValue = 15;
+   
 
     public int larbnainCost = 10;
     public int nainploseurCost = 10;
@@ -67,7 +70,7 @@ public class Script_GameManager : MonoBehaviour
     {
         CreateGrid();
         AttributeBaseMap();
-        AttributeBedRock();
+       // AttributeBedRock();
         SpawnMap();
         DuplicateMap();
         SpawnPlayers();
@@ -107,7 +110,7 @@ public class Script_GameManager : MonoBehaviour
 
                 if(rdm <= chanceBedRock)
                 {
-                     GetCellByPostion(0, playersGrids[0].gridCells[i].cellPosition).cellType = CellType.Rare;
+                     GetCellByPostion(0, playersGrids[0].gridCells[i].cellPosition).cellType = CellType.Bedrock;
                 }
                 else if (rdm <= chanceRareRock)
                 {
@@ -197,14 +200,21 @@ public class Script_GameManager : MonoBehaviour
             cellScreenPos = cameras[playerGrid].GetComponent<Camera>().WorldToViewportPoint(newCell.cellGameObject.transform.position);
             Debug.Log(cellScreenPos);
 
-            if(cellScreenPos.x <= 0f)
+            if(cellScreenPos.x <= 0.1f)
             {
-              //UnzoomCam(playerGrid);
+              UnzoomCam(playerGrid);
             }
-
-            if (cellScreenPos.x >= 1f)
+            else if (cellScreenPos.x >= 0.9f)
             {
-              //  UnzoomCam(playerGrid);
+              UnzoomCam(playerGrid);
+            }
+            else if (cellScreenPos.y <= 0.1f)
+            {
+                UnzoomCam(playerGrid);
+            }
+            else if (cellScreenPos.y >= 0.9f)
+            {
+                UnzoomCam(playerGrid);
             }
 
             Debug.Log(cellScreenPos);
@@ -225,6 +235,7 @@ public class Script_GameManager : MonoBehaviour
             case CellType.Bedrock:
                 newCell.cellGameObject = Instantiate(prefabBedRock, cellSpawnPos, Quaternion.identity, gridParent);
                 newCell.cellType = CellType.Bedrock;
+                newCell.rockLife = bedRockLife;
                 break;
 
             case CellType.Empty:
@@ -299,6 +310,10 @@ public class Script_GameManager : MonoBehaviour
 
                 case CellType.Rare:
                     goldAdd = rareRockGoldValue;
+                    break;
+
+                case CellType.Bedrock:
+                    goldAdd = bedRockGoldValue;
                     break;
             }
 
