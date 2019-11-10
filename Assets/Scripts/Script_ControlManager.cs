@@ -11,7 +11,8 @@ public class Script_ControlManager : MonoBehaviour
     public int playerDamage = 1;
     public Cell playerCurrentCell;
     public Cell targetCell;
-    private bool canMove = true;
+    public Animator associateAnimator;
+    public bool canMove = true;
 
     // Update is called once per frame
     void Update()
@@ -24,37 +25,40 @@ public class Script_ControlManager : MonoBehaviour
             if (horizontal > 0f)
             {
                 currentDirection = Direction.right;
+                associateAnimator.SetInteger("IdleState", 2);
                 SetCurrentTarget();
                 Move();
             }
             else if (horizontal < 0f)
             {
                 currentDirection = Direction.left;
+                associateAnimator.SetInteger("IdleState", 3);
                 SetCurrentTarget();
                 Move();
             }
             else if (vertical > 0f)
             {
                 currentDirection = Direction.up;
+                associateAnimator.SetInteger("IdleState", 1);
                 SetCurrentTarget();
                 Move();
             }
             else if (vertical < 0f)
             {
                 currentDirection = Direction.down;
+                associateAnimator.SetInteger("IdleState", 0);
                 SetCurrentTarget();
                 Move();
             }
-        }
-
-        if (Input.GetButtonDown("Ps4_Miner_" + playerDwarf))
-        {
-            Mine();
-        }
-
-        if (Input.GetButtonDown("Ps4_Larbnain_" + playerDwarf))
-        {
-            SpawnLarbnain();
+            else if (Input.GetButtonDown("Ps4_Miner_" + playerDwarf))
+            {
+                associateAnimator.SetTrigger("Dig");
+                canMove = false;
+            }
+            else if (Input.GetButtonDown("Ps4_Larbnain_" + playerDwarf))
+            {
+                SpawnLarbnain();
+            }
         }
     }
 
@@ -66,7 +70,7 @@ public class Script_ControlManager : MonoBehaviour
         }
     }
 
-    void Mine()
+    public void Mine()
     {
         switch (currentDirection)
         {
