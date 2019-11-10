@@ -8,7 +8,10 @@ public class Script_UIManager : MonoBehaviour
 {
     public static Script_UIManager Instance { get; private set; }
 
-    public List<TextMeshProUGUI> playersGoldText; 
+    public List<TextMeshProUGUI> playersGoldText;
+
+    public GameObject timerBloc;
+    public GameObject endgameMenu;
 
     private void Awake()
     {
@@ -25,5 +28,11 @@ public class Script_UIManager : MonoBehaviour
     public void UpdateGoldText(int playerIdx, int goldValue)
     {
         playersGoldText[playerIdx].text = goldValue.ToString();
+    }
+
+    public void ShowFinish()
+    {
+        timerBloc.SetActive(false);
+        endgameMenu.SetActive(true);
     }
 }

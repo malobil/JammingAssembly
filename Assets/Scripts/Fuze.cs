@@ -5,10 +5,9 @@ using UnityEngine.UI;
 public class Fuze : MonoBehaviour
 {
 	public Image fuze;
-	private float timeLeft;
+	private float timeLeft = 1f;
 	public float maxTime = 10f;
 	public Transform objectToMove;
-	public RectTransform fuzeObject;
 	public float fuzeSpeed;
 
 	
@@ -24,14 +23,9 @@ public class Fuze : MonoBehaviour
 		if (timeLeft > 0)
 		{
 			timeLeft -= Time.deltaTime;
+            fuze.fillAmount = timeLeft / maxTime;
+        }
 
-			fuze.fillAmount = timeLeft / maxTime;
-
-
-
-		}
-
-		objectToMove.Translate(-1 * fuzeSpeed, 0,0);
-
+        objectToMove.Translate(-1 * fuzeSpeed, 0,0);
 	}
 }
