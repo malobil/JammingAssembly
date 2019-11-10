@@ -8,6 +8,9 @@ public class Script_GameManager : MonoBehaviour
 {
     public static Script_GameManager Instance { get; private set; }
 
+    public float gameTime = 180f;
+    private float currentGameTime;
+    private bool gameIsOver = false;
     public Vector2 gridSize = new Vector2(10, 10);
     public int playersStartSpace = 5;
     public float gridCellSize = 64f;
@@ -72,7 +75,25 @@ public class Script_GameManager : MonoBehaviour
         SpawnMap();
         DuplicateMap();
         SpawnPlayers();
+        currentGameTime = gameTime;
+    }
 
+    private void Update()
+    {
+        if(currentGameTime > 0)
+        {
+            currentGameTime -= Time.deltaTime;
+        }
+        else if(currentGameTime <= 0 && !gameIsOver)
+        {
+            EndGame();
+        }
+    }
+
+    void EndGame()
+    {
+        gameIsOver = true;
+        Time.timeScale = 0;
     }
 
     void CreateGrid()
@@ -134,8 +155,6 @@ public class Script_GameManager : MonoBehaviour
     {
         Transform newGridInst = Instantiate(gridParent, new Vector2(gridSize.x + 500f, 0), Quaternion.identity);
         Grid newGrid = new Grid();
-
-        //newGrid.gridCells = new List<Cell>(playersGrids[0].gridCells);
 
         for (int j = 0; j < newGridInst.childCount; j++)
         {

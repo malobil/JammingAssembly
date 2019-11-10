@@ -43,7 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c45f160b2e07214594d13176725fac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: {x: 50, y: 50}
+  gameTime: 180
+  gridSize: {x: 100, y: 100}
   playersStartSpace: 1
   gridCellSize: 1
   playerCount: 2
