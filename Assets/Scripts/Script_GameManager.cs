@@ -163,6 +163,7 @@ public class Script_GameManager : MonoBehaviour
             newPlayer.GetComponent<Script_ControlManager>().SetPlayerCell(GetCellByPostion(i, playersStartCell));
             cameras[i].position = new Vector3(newPlayer.transform.position.x, newPlayer.transform.position.y, -10f);
             playersGold.Add(0);
+            Script_UIManager.Instance.UpdateGoldText(i, playersGold[i]);
         }
     }
 
@@ -327,6 +328,7 @@ public class Script_GameManager : MonoBehaviour
     void AddGold(int goldValue, int playerIdx)
     {
         playersGold[playerIdx] += goldValue;
+        Script_UIManager.Instance.UpdateGoldText(playerIdx, playersGold[playerIdx]);
     }
 
     public void SpawnALarbnain(int playerIdx, Cell targetCell, Direction larbnainDirection)
@@ -336,6 +338,7 @@ public class Script_GameManager : MonoBehaviour
             GameObject newLarbnain = Instantiate(larbnains[playerIdx], targetCell.cellGameObject.transform.position, Quaternion.identity);
             newLarbnain.GetComponent<Script_Larbnain>().SetVariables(targetCell, playerIdx, larbnainDirection);
             playersGold[playerIdx] -= larbnainCost;
+            Script_UIManager.Instance.UpdateGoldText(playerIdx, playersGold[playerIdx]);
 
         }
     }
