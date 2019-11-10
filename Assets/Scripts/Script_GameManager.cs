@@ -83,6 +83,7 @@ public class Script_GameManager : MonoBehaviour
         if(currentGameTime > 0)
         {
             currentGameTime -= Time.deltaTime;
+            Script_UIManager.Instance.UpdateTimer(currentGameTime);
         }
         else if(currentGameTime <= 0 && !gameIsOver)
         {

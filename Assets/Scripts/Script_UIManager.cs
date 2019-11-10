@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Script_UIManager : MonoBehaviour
 {
@@ -10,8 +11,15 @@ public class Script_UIManager : MonoBehaviour
 
     public List<TextMeshProUGUI> playersGoldText;
 
-    public GameObject timerBloc;
     public GameObject endgameMenu;
+    public GameObject VictoryPlayer1;
+    public GameObject DeafeatPlayer1;
+    public GameObject VictoryPlayer2;
+    public GameObject DeafeatPlayer2;
+
+    public TextMeshProUGUI timerMeshPro;
+    public TextMeshProUGUI scoreMeshPlayer1;
+    public TextMeshProUGUI scoreMeshPlayer2;
 
     private void Awake()
     {
@@ -30,9 +38,23 @@ public class Script_UIManager : MonoBehaviour
         playersGoldText[playerIdx].text = goldValue.ToString();
     }
 
+    public void UpdateTimer(float time)
+    {
+        timerMeshPro.text = time.ToString("F0");
+    }
+
     public void ShowFinish()
     {
-        timerBloc.SetActive(false);
         endgameMenu.SetActive(true);
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene("Scene_Game");
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Scene_MainMenu");
     }
 }
