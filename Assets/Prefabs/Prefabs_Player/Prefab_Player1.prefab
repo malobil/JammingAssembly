@@ -114,6 +114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   associatePlayerScript: {fileID: -3903371370867614124}
+  audioSourceComp: {fileID: 8405394149348525702}
+  soundToPlay: {fileID: 8300000, guid: ad1db97f095914b4f84f3c3a86ac27b5, type: 3}
 --- !u!1 &2337015711196691399
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +179,12 @@ MonoBehaviour:
     rockLife: 1
   associateAnimator: {fileID: 5920037366079456845}
   canMove: 1
+  audioSComp: {fileID: 8405394149348525702}
+  digNormals:
+  - {fileID: 8300000, guid: 8f9435eed4a423c4c91a03d0cbbd2888, type: 3}
+  - {fileID: 8300000, guid: 3e6166dfcb9a3f244a9246a761e8f24a, type: 3}
+  - {fileID: 8300000, guid: d828bf8ac21592f41a977380674f5cec, type: 3}
+  digRare: {fileID: 8300000, guid: 7c1ee083184497e4ba40de6078c046ce, type: 3}
 --- !u!82 &8405394149348525702
 AudioSource:
   m_ObjectHideFlags: 0

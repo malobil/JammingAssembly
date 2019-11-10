@@ -14,6 +14,11 @@ public class Script_ControlManager : MonoBehaviour
     public Animator associateAnimator;
     public bool canMove = true;
 
+    [Header("Audio")]
+    public AudioSource audioSComp;
+    public List<AudioClip> digNormals;
+    public AudioClip digRare;
+
     // Update is called once per frame
     void Update()
     {
@@ -93,7 +98,20 @@ public class Script_ControlManager : MonoBehaviour
 
         if (targetCell.cellType == CellType.Bedrock || targetCell.cellType == CellType.Normal || targetCell.cellType == CellType.Rare)
         {
+
+            if (targetCell.cellType == CellType.Normal)
+            {
+                audioSComp.PlayOneShot(digNormals[Random.Range(0, digNormals.Count)]);
+            }
+            else
+            {
+                audioSComp.PlayOneShot(digRare);
+
+            }
+
             Script_GameManager.Instance.DamageARock(targetCell.cellPosition, playerDamage, playerDwarf);
+
+           
         }
         else if(targetCell.cellType == CellType.Larbnain)
         {
