@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1708630590907388170}
   - component: {fileID: 5593366540692844319}
   - component: {fileID: 3323136644200114575}
+  - component: {fileID: 3671027300406506347}
   m_Layer: 0
   m_Name: Larbnain_Sprite
   m_TagString: Untagged
@@ -101,6 +102,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3671027300406506347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3974625003070414035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc94d084bfa0f7246a59edaca3a5e747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  associatePlayerScript: {fileID: 0}
+  associateLarbnainScript: {fileID: 7396167363549275426}
+  audioSourceComp: {fileID: 8584806391987509433}
+  soundToPlay: {fileID: 8300000, guid: ad1db97f095914b4f84f3c3a86ac27b5, type: 3}
 --- !u!1 &8541173700959554556
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,6 +179,13 @@ MonoBehaviour:
     larbnainIn: {fileID: 0}
     cellType: 0
     rockLife: 1
+  canMove: 1
+  audioSComp: {fileID: 8584806391987509433}
+  digNormals:
+  - {fileID: 8300000, guid: 8f9435eed4a423c4c91a03d0cbbd2888, type: 3}
+  - {fileID: 8300000, guid: 3e6166dfcb9a3f244a9246a761e8f24a, type: 3}
+  - {fileID: 8300000, guid: d828bf8ac21592f41a977380674f5cec, type: 3}
+  digRare: {fileID: 8300000, guid: 7c1ee083184497e4ba40de6078c046ce, type: 3}
 --- !u!82 &8584806391987509433
 AudioSource:
   m_ObjectHideFlags: 0

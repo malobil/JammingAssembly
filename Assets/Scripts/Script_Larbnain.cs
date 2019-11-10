@@ -15,7 +15,12 @@ public class Script_Larbnain : MonoBehaviour
 
     public Cell larbnainCurrentCell;
     private Cell targetCell;
-    private bool canMove = true;
+    public bool canMove = true;
+
+     [Header("Audio")]
+    public AudioSource audioSComp;
+    public List<AudioClip> digNormals;
+    public AudioClip digRare;
 
     public void SetVariables(Cell startCell, int player, Direction baseDirection)
     {
@@ -23,69 +28,71 @@ public class Script_Larbnain : MonoBehaviour
         Script_GameManager.Instance.SetCellType(player, startCell.cellPosition, CellType.Larbnain,this);
         playerDwarf = player;
         currentDirection = baseDirection;
+        SetDirection();
     }
 
-    private void Update()
+    void SetDirection()
     {
-        if(canMove)
+        switch (currentDirection)
         {
-            switch (currentDirection)
-            {
-                case Direction.down:
-                    targetCell = Script_GameManager.Instance.GetCellByPostion(playerDwarf, new Vector2(larbnainCurrentCell.cellPosition.x, larbnainCurrentCell.cellPosition.y - 1));
-                    animatorComp.SetInteger("Dig", 0);
-                    break;
+            case Direction.down:
+                targetCell = Script_GameManager.Instance.GetCellByPostion(playerDwarf, new Vector2(larbnainCurrentCell.cellPosition.x, larbnainCurrentCell.cellPosition.y - 1));
+                animatorComp.SetInteger("Dig", 0);
+                break;
 
-                case Direction.up:
-                    targetCell = Script_GameManager.Instance.GetCellByPostion(playerDwarf, new Vector2(larbnainCurrentCell.cellPosition.x, larbnainCurrentCell.cellPosition.y + 1));
-                    animatorComp.SetInteger("Dig", 2);
-                    break;
+            case Direction.up:
+                targetCell = Script_GameManager.Instance.GetCellByPostion(playerDwarf, new Vector2(larbnainCurrentCell.cellPosition.x, larbnainCurrentCell.cellPosition.y + 1));
+                animatorComp.SetInteger("Dig", 2);
+                break;
 
-                case Direction.left:
-                    targetCell = Script_GameManager.Instance.GetCellByPostion(playerDwarf, new Vector2(larbnainCurrentCell.cellPosition.x - 1, larbnainCurrentCell.cellPosition.y));
-                    animatorComp.SetInteger("Dig", 1);
-                    break;
+            case Direction.left:
+                targetCell = Script_GameManager.Instance.GetCellByPostion(playerDwarf, new Vector2(larbnainCurrentCell.cellPosition.x - 1, larbnainCurrentCell.cellPosition.y));
+                animatorComp.SetInteger("Dig", 1);
+                break;
 
-                case Direction.right:
-                    targetCell = Script_GameManager.Instance.GetCellByPostion(playerDwarf, new Vector2(larbnainCurrentCell.cellPosition.x + 1, larbnainCurrentCell.cellPosition.y));
-                    animatorComp.SetInteger("Dig", 3);
-                    break;
-            }
-
-            if (targetCell.cellType != CellType.Empty && targetCell.cellType != CellType.Larbnain)
-            {
-                Dig();
-            }
-            
-           
-
-            canMove = false;
-            life--;
-
-            if (life > 0)
-            {
-                if (targetCell.cellType == CellType.Empty)
-                {
-                    transform.position = new Vector2(targetCell.cellGameObject.transform.position.x, targetCell.cellGameObject.transform.position.y);
-                    Script_GameManager.Instance.SetCellType(playerDwarf, larbnainCurrentCell.cellPosition, CellType.Empty, null);
-                    larbnainCurrentCell = targetCell;
-                    Script_GameManager.Instance.SetCellType(playerDwarf, larbnainCurrentCell.cellPosition, CellType.Larbnain, this);
-                }
-
-                StartCoroutine(WaitToMove());
-            }
-            else
-            {
-                animatorComp.SetBool("Tired", true);
-            }
-
-           
+            case Direction.right:
+                targetCell = Script_GameManager.Instance.GetCellByPostion(playerDwarf, new Vector2(larbnainCurrentCell.cellPosition.x + 1, larbnainCurrentCell.cellPosition.y));
+                animatorComp.SetInteger("Dig", 3);
+                break;
         }
     }
 
     public void Dig()
     {
-        Script_GameManager.Instance.DamageARock(targetCell.cellPosition, damage, playerDwarf);
+        SetDirection();
+
+        if (targetCell.cellType != CellType.Empty && targetCell.cellType != CellType.Larbnain)
+        {
+            if (targetCell.cellType == CellType.Normal)
+            {
+                audioSComp.PlayOneShot(digNormals[Random.Range(0, digNormals.Count)]);
+            }
+            else
+            {
+                audioSComp.PlayOneShot(digRare);
+
+            }
+
+            Script_GameManager.Instance.DamageARock(targetCell.cellPosition, damage, playerDwarf);
+        }
+
+        canMove = false;
+        life--;
+
+        if (life > 0)
+        {
+            if (targetCell.cellType == CellType.Empty)
+            {
+                transform.position = new Vector2(targetCell.cellGameObject.transform.position.x, targetCell.cellGameObject.transform.position.y);
+                Script_GameManager.Instance.SetCellType(playerDwarf, larbnainCurrentCell.cellPosition, CellType.Empty, null);
+                larbnainCurrentCell = targetCell;
+                Script_GameManager.Instance.SetCellType(playerDwarf, larbnainCurrentCell.cellPosition, CellType.Larbnain, this);
+            }
+        }
+        else
+        {
+            animatorComp.SetBool("Tired", true);
+        }
     }
 
     public void TakeDamage()
@@ -122,11 +129,5 @@ public class Script_Larbnain : MonoBehaviour
 
         Instantiate(prefabExplosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
-    }
-
-    IEnumerator WaitToMove()
-    {
-        yield return new WaitForSeconds(moveSpeed);
-        canMove = true;
     }
 }

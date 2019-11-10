@@ -96,9 +96,13 @@ public class Script_ControlManager : MonoBehaviour
                 break;
         }
 
-        if (targetCell.cellType == CellType.Bedrock || targetCell.cellType == CellType.Normal || targetCell.cellType == CellType.Rare)
+        
+        if(targetCell.cellType == CellType.Larbnain)
         {
-
+            targetCell.larbnainIn.TakeDamage();
+        }
+        else if (targetCell.cellType == CellType.Bedrock || targetCell.cellType == CellType.Normal || targetCell.cellType == CellType.Rare)
+        {
             if (targetCell.cellType == CellType.Normal)
             {
                 audioSComp.PlayOneShot(digNormals[Random.Range(0, digNormals.Count)]);
@@ -110,12 +114,6 @@ public class Script_ControlManager : MonoBehaviour
             }
 
             Script_GameManager.Instance.DamageARock(targetCell.cellPosition, playerDamage, playerDwarf);
-
-           
-        }
-        else if(targetCell.cellType == CellType.Larbnain)
-        {
-            targetCell.larbnainIn.TakeDamage();
         }
     }
     private void Move()
