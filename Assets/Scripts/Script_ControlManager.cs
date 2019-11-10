@@ -64,6 +64,24 @@ public class Script_ControlManager : MonoBehaviour
             {
                 SpawnLarbnain();
             }
+            else if (Input.GetButtonDown("Ps4_NainPloseur_" + playerDwarf))
+            {
+                SpawnNainPloseur();
+            }
+        }
+    }
+
+    void SpawnNainPloseur()
+    {
+        switch(playerDwarf)
+        {
+            case 0:
+                Script_GameManager.Instance.SpawnANainPloseur(1, Script_GameManager.Instance.GetCellByPostion(1, playerCurrentCell.cellPosition)) ;
+                break;
+
+            case 1:
+                Script_GameManager.Instance.SpawnANainPloseur(0, Script_GameManager.Instance.GetCellByPostion(0, playerCurrentCell.cellPosition));
+                break;
         }
     }
 
@@ -101,9 +119,13 @@ public class Script_ControlManager : MonoBehaviour
         {
             targetCell.larbnainIn.TakeDamage();
         }
-        else if (targetCell.cellType == CellType.Bedrock || targetCell.cellType == CellType.Normal || targetCell.cellType == CellType.Rare)
+        else if(targetCell.cellType == CellType.NainPloseur)
         {
-            if (targetCell.cellType == CellType.Normal)
+            targetCell.nainPloseurIn.TakeDamage();
+        }
+        else if (targetCell.cellType == CellType.Bedrock || targetCell.cellType == CellType.Normal || targetCell.cellType == CellType.Rare || targetCell.cellType == CellType.Garbage)
+        {
+            if (targetCell.cellType == CellType.Normal || targetCell.cellType == CellType.Garbage)
             {
                 audioSComp.PlayOneShot(digNormals[Random.Range(0, digNormals.Count)]);
             }
@@ -120,7 +142,10 @@ public class Script_ControlManager : MonoBehaviour
     {
         if(targetCell.cellType == CellType.Empty)
         {
+            Script_GameManager.Instance.SetCellType(playerDwarf, playerCurrentCell.cellPosition, CellType.Empty, null, null);
             transform.position = new Vector2(targetCell.cellGameObject.transform.position.x, targetCell.cellGameObject.transform.position.y);
+            Script_GameManager.Instance.SetCellType(playerDwarf, targetCell.cellPosition, CellType.Player, null, null);
+
             playerCurrentCell = targetCell;
             canMove = false;
             SetCurrentTarget();

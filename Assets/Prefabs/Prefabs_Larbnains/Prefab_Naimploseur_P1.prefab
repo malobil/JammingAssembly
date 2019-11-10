@@ -69,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9999
   m_Sprite: {fileID: 2023158029988960844, guid: 518a85fb4f789d24e9ea0f013154c089,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -111,6 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6139595529959106330}
   - component: {fileID: -5806105525245124020}
+  - component: {fileID: 7659273757528215692}
   m_Layer: 0
   m_Name: Prefab_Naimploseur_P1
   m_TagString: Untagged
@@ -229,3 +230,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7659273757528215692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7929123093748710472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 343810bac81d94340b008f9eccc7601b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToExplosion: 5
+  life: 0
+  playerDwarf: 0
+  prefabExplosion: {fileID: 8052183978148925942, guid: 39c09485bb7a84c498fb36cd7731496d,
+    type: 3}
+  animatorComp: {fileID: 0}

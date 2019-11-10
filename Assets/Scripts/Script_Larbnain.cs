@@ -25,7 +25,7 @@ public class Script_Larbnain : MonoBehaviour
     public void SetVariables(Cell startCell, int player, Direction baseDirection)
     {
         larbnainCurrentCell = startCell;
-        Script_GameManager.Instance.SetCellType(player, startCell.cellPosition, CellType.Larbnain,this);
+        Script_GameManager.Instance.SetCellType(player, startCell.cellPosition, CellType.Larbnain,this,null);
         playerDwarf = player;
         currentDirection = baseDirection;
         SetDirection();
@@ -84,9 +84,9 @@ public class Script_Larbnain : MonoBehaviour
             if (targetCell.cellType == CellType.Empty)
             {
                 transform.position = new Vector2(targetCell.cellGameObject.transform.position.x, targetCell.cellGameObject.transform.position.y);
-                Script_GameManager.Instance.SetCellType(playerDwarf, larbnainCurrentCell.cellPosition, CellType.Empty, null);
+                Script_GameManager.Instance.SetCellType(playerDwarf, larbnainCurrentCell.cellPosition, CellType.Empty, null,null);
                 larbnainCurrentCell = targetCell;
-                Script_GameManager.Instance.SetCellType(playerDwarf, larbnainCurrentCell.cellPosition, CellType.Larbnain, this);
+                Script_GameManager.Instance.SetCellType(playerDwarf, larbnainCurrentCell.cellPosition, CellType.Larbnain, this,null);
             }
         }
         else
@@ -107,7 +107,7 @@ public class Script_Larbnain : MonoBehaviour
 
     public void Die()
     {
-        Script_GameManager.Instance.SetCellType(playerDwarf, larbnainCurrentCell.cellPosition, CellType.Empty,null);
+        Script_GameManager.Instance.SetCellType(playerDwarf, larbnainCurrentCell.cellPosition, CellType.Empty,null,null);
 
         Vector2 cellLeftPos = Script_GameManager.Instance.GetCellByPostion(playerDwarf,new Vector2(larbnainCurrentCell.cellPosition.x-1, larbnainCurrentCell.cellPosition.y)).cellPosition;
         Vector2 cellRightPos = Script_GameManager.Instance.GetCellByPostion(playerDwarf,new Vector2(larbnainCurrentCell.cellPosition.x+1, larbnainCurrentCell.cellPosition.y)).cellPosition;

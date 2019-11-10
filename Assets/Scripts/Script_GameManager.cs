@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum CellType { Empty, Normal, Rare, Bedrock, Larbnain }
+public enum CellType { Empty, Normal, Rare, Bedrock, Larbnain, NainPloseur, Garbage, Player }
 
 public class Script_GameManager : MonoBehaviour
 {
@@ -18,6 +18,7 @@ public class Script_GameManager : MonoBehaviour
     public int decalage = 0;
 
     public int normalRockLife = 2;
+    public int garbageRockLife = 1;
     public int rareRockLife = 3;
     public int bedRockLife = 5;
     public int normalRockGoldValue = 5;
@@ -31,9 +32,11 @@ public class Script_GameManager : MonoBehaviour
     public Transform gridParent;
 
     public GameObject prefabNormalRock;
+    public GameObject prefabGarbageRock;
     public GameObject prefabGround;
     public GameObject prefabRareRock;
     public GameObject prefabBedRock;
+    public GameObject prefabNainPloseur;
 
     public List<GameObject> larbnains;
 
@@ -175,10 +178,10 @@ public class Script_GameManager : MonoBehaviour
     {
         for (int i = 0; i < playerCount; i++)
         {
-            Debug.Log(GetCellByPostion(i, playersStartCell).cellGameObject.transform.localPosition);
             GameObject newPlayer = Instantiate(prefabPlayers[i], GetCellByPostion(i, playersStartCell).cellGameObject.transform.position, Quaternion.identity);
             newPlayer.GetComponent<Script_ControlManager>().SetPlayerNum(i);
             newPlayer.GetComponent<Script_ControlManager>().SetPlayerCell(GetCellByPostion(i, playersStartCell));
+            SetCellType(i, GetCellByPostion(i, playersStartCell).cellPosition, CellType.Player, null, null);
             cameras[i].position = new Vector3(newPlayer.transform.position.x, newPlayer.transform.position.y, -10f);
             playersGold.Add(0);
             Script_UIManager.Instance.UpdateGoldText(i, playersGold[i]);
@@ -241,7 +244,6 @@ public class Script_GameManager : MonoBehaviour
             case CellType.Empty:
                 newCell.cellGameObject = Instantiate(prefabGround, cellSpawnPos, Quaternion.identity, gridParent);
                 newCell.cellType = CellType.Empty;
-              
                 break;
 
             case CellType.Normal:
@@ -255,10 +257,16 @@ public class Script_GameManager : MonoBehaviour
                 newCell.cellType = CellType.Rare;
                 newCell.rockLife = rareRockLife;
                 break;
+
+            case CellType.Garbage:
+                newCell.cellGameObject = Instantiate(prefabGarbageRock, cellSpawnPos, Quaternion.identity, gridParent);
+                newCell.cellType = CellType.Garbage;
+                newCell.rockLife = garbageRockLife;
+                break;
         }
     }
 
-    public void SetCellType(int playerGrid, Vector2 cellPos, CellType newCellType, Script_Larbnain larbnain)
+    public void SetCellType(int playerGrid, Vector2 cellPos, CellType newCellType, Script_Larbnain larbnain,Script_NainPloseur nainPloseur)
     {
         Cell newCell = GetCellByPostion(playerGrid, cellPos);
 
@@ -289,6 +297,15 @@ public class Script_GameManager : MonoBehaviour
             case CellType.Larbnain:
                 newCell.cellType = CellType.Larbnain;
                 newCell.larbnainIn = larbnain;
+                break;
+
+            case CellType.NainPloseur:
+                newCell.cellType = CellType.NainPloseur;
+                newCell.nainPloseurIn = nainPloseur;
+                break;
+
+            case CellType.Player:
+                newCell.cellType = CellType.Player;
                 break;
         }
     }
@@ -330,6 +347,17 @@ public class Script_GameManager : MonoBehaviour
         Script_UIManager.Instance.UpdateGoldText(playerIdx, playersGold[playerIdx]);
     }
 
+    public void SpawnANainPloseur(int playerIdx, Cell targetCell)
+    {
+        if (playersGold[playerIdx] >= nainploseurCost && targetCell.cellType == CellType.Empty)
+        {
+            GameObject newNainPloseur = Instantiate(prefabNainPloseur, targetCell.cellGameObject.transform.position, Quaternion.identity);
+            newNainPloseur.GetComponent<Script_NainPloseur>().SetVariables(targetCell, playerIdx);
+            playersGold[playerIdx] -= nainploseurCost;
+            Script_UIManager.Instance.UpdateGoldText(playerIdx, playersGold[playerIdx]);
+        }
+    }
+
     public void SpawnALarbnain(int playerIdx, Cell targetCell, Direction larbnainDirection)
     {
         if(playersGold[playerIdx] >= larbnainCost)
@@ -369,6 +397,7 @@ public class Cell
     public Vector2 cellPosition;
     public GameObject cellGameObject;
     public Script_Larbnain larbnainIn;
+    public Script_NainPloseur nainPloseurIn;
     public CellType cellType;
     public int rockLife = 1;
 }
