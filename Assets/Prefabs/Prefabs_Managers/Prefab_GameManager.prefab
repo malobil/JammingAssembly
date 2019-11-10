@@ -65,10 +65,12 @@ MonoBehaviour:
     type: 3}
   prefabBedRock: {fileID: 4269820809045130370, guid: 67249c0a2809ce34f8590188a5579108,
     type: 3}
-  larbnain: {fileID: 8541173700959554556, guid: 6f4d5f40907230a4ca3a3be3ca04941c,
-    type: 3}
-  prefabPlayer: {fileID: 2337015711196691399, guid: d82a441cc76b62c4989e742f0902a811,
-    type: 3}
+  larbnains:
+  - {fileID: 8541173700959554556, guid: 942f97459104b9a4dbee54cac69f34b5, type: 3}
+  - {fileID: 8541173700959554556, guid: 6f4d5f40907230a4ca3a3be3ca04941c, type: 3}
+  prefabPlayers:
+  - {fileID: 2337015711196691399, guid: d82a441cc76b62c4989e742f0902a811, type: 3}
+  - {fileID: 2337015711196691399, guid: 5fe0f885683c1a54aa4eb547fe2ecf30, type: 3}
   playersGold: 
   cameras:
   - {fileID: 0}

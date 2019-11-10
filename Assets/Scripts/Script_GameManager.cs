@@ -33,9 +33,9 @@ public class Script_GameManager : MonoBehaviour
     public GameObject prefabRareRock;
     public GameObject prefabBedRock;
 
-    public GameObject larbnain;
+    public List<GameObject> larbnains;
 
-    public GameObject prefabPlayer;
+    public List<GameObject> prefabPlayers;
 
     public List<int> playersGold;
 
@@ -158,7 +158,7 @@ public class Script_GameManager : MonoBehaviour
         for (int i = 0; i < playerCount; i++)
         {
             Debug.Log(GetCellByPostion(i, playersStartCell).cellGameObject.transform.localPosition);
-            GameObject newPlayer = Instantiate(prefabPlayer, GetCellByPostion(i, playersStartCell).cellGameObject.transform.position, Quaternion.identity);
+            GameObject newPlayer = Instantiate(prefabPlayers[i], GetCellByPostion(i, playersStartCell).cellGameObject.transform.position, Quaternion.identity);
             newPlayer.GetComponent<Script_ControlManager>().SetPlayerNum(i);
             newPlayer.GetComponent<Script_ControlManager>().SetPlayerCell(GetCellByPostion(i, playersStartCell));
             cameras[i].position = new Vector3(newPlayer.transform.position.x, newPlayer.transform.position.y, -10f);
@@ -333,7 +333,7 @@ public class Script_GameManager : MonoBehaviour
     {
         if(playersGold[playerIdx] >= larbnainCost)
         {
-            GameObject newLarbnain = Instantiate(larbnain, targetCell.cellGameObject.transform.position, Quaternion.identity);
+            GameObject newLarbnain = Instantiate(larbnains[playerIdx], targetCell.cellGameObject.transform.position, Quaternion.identity);
             newLarbnain.GetComponent<Script_Larbnain>().SetVariables(targetCell, playerIdx, larbnainDirection);
             playersGold[playerIdx] -= larbnainCost;
 
