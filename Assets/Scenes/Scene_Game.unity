@@ -389,6 +389,21 @@ PrefabInstance:
       propertyPath: cameras.Array.data[1]
       value: 
       objectReference: {fileID: 109749946}
+    - target: {fileID: 259933993520226556, guid: 0341d247310bf494cb04959736cd4729,
+        type: 3}
+      propertyPath: rareRockLife
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 259933993520226556, guid: 0341d247310bf494cb04959736cd4729,
+        type: 3}
+      propertyPath: normalRockGoldValue
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 259933993520226556, guid: 0341d247310bf494cb04959736cd4729,
+        type: 3}
+      propertyPath: larbnainCost
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0341d247310bf494cb04959736cd4729, type: 3}
 --- !u!1001 &6154259033484846501

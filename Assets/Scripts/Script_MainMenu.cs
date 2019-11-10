@@ -15,7 +15,7 @@ public class Script_MainMenu : MonoBehaviour
     {
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
-
+        Time.timeScale = 1;
 	}
 
 	void Update()
