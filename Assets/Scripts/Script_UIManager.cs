@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Script_UIManager : MonoBehaviour
 {
@@ -12,14 +13,13 @@ public class Script_UIManager : MonoBehaviour
     public List<TextMeshProUGUI> playersGoldText;
 
     public GameObject endgameMenu;
-    public GameObject VictoryPlayer1;
-    public GameObject DeafeatPlayer1;
-    public GameObject VictoryPlayer2;
-    public GameObject DeafeatPlayer2;
+    public List<GameObject> endPanel;
+    public List<TextMeshProUGUI> scoreText;
+    public Sprite winSprite;
 
     public TextMeshProUGUI timerMeshPro;
-    public TextMeshProUGUI scoreMeshPlayer1;
-    public TextMeshProUGUI scoreMeshPlayer2;
+
+    public GameObject defaultSelection;
 
     private void Awake()
     {
@@ -33,6 +33,24 @@ public class Script_UIManager : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2))
+        {
+
+            CatchMouseClicks(defaultSelection);
+
+        }
+
+    }
+
+    public void CatchMouseClicks(GameObject setSelection)
+    {
+
+        EventSystem.current.SetSelectedGameObject(setSelection);
+
+    }
+
     public void UpdateGoldText(int playerIdx, int goldValue)
     {
         playersGoldText[playerIdx].text = goldValue.ToString();
@@ -43,8 +61,21 @@ public class Script_UIManager : MonoBehaviour
         timerMeshPro.text = time.ToString("F0");
     }
 
-    public void ShowFinish()
+    public void ShowFinish(int winnerPlayerIdx, List<int> scores)
     {
+        for(int i = 0; i < endPanel.Count; i++)
+        {
+            if(winnerPlayerIdx == i)
+            {
+                endPanel[i].GetComponent<Image>().sprite = winSprite;
+            }
+        }
+
+        for (int i = 0; i < scoreText.Count; i++)
+        {
+            scoreText[i].text = scores[i].ToString() + "m²" ;
+        }
+
         endgameMenu.SetActive(true);
     }
 
