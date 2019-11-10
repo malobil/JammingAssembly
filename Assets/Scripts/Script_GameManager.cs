@@ -42,6 +42,9 @@ public class Script_GameManager : MonoBehaviour
     [Range(0, 100)]
     public int chanceRareRock = 35;
 
+    [Range(0, 100)]
+    public int chanceBedRock = 10;
+
     private List<Grid> playersGrids = new List<Grid>();
     private Vector2 playersStartCell;
 
@@ -62,7 +65,7 @@ public class Script_GameManager : MonoBehaviour
     {
         CreateGrid();
         AttributeBaseMap();
-        AttributeBedRock();
+        //AttributeBedRock();
         SpawnMap();
         DuplicateMap();
         SpawnPlayers();
@@ -100,7 +103,11 @@ public class Script_GameManager : MonoBehaviour
             {
                 int rdm = Random.Range(1, 101);
 
-                if (rdm <= chanceRareRock)
+                if(rdm <= chanceBedRock)
+                {
+                    GetCellByPostion(0, playersGrids[0].gridCells[i].cellPosition).cellType = CellType.Bedrock;
+                }
+                else if (rdm <= chanceRareRock)
                 {
                     GetCellByPostion(0, playersGrids[0].gridCells[i].cellPosition).cellType = CellType.Rare;
                 }
