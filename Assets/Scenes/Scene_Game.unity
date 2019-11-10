@@ -540,6 +540,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 704400422, guid: 2a95f7d6e8cce5a4e8a9b20536ff46a6, type: 3}
+      propertyPath: m_text
+      value: REJOUER
+      objectReference: {fileID: 0}
+    - target: {fileID: 704400422, guid: 2a95f7d6e8cce5a4e8a9b20536ff46a6, type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 704400422, guid: 2a95f7d6e8cce5a4e8a9b20536ff46a6, type: 3}
+      propertyPath: m_fontSize
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 704400422, guid: 2a95f7d6e8cce5a4e8a9b20536ff46a6, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 2128241648073837996, guid: 2a95f7d6e8cce5a4e8a9b20536ff46a6,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
