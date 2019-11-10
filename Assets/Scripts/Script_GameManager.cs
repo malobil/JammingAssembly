@@ -260,7 +260,7 @@ public class Script_GameManager : MonoBehaviour
     public void SetCellType(int playerGrid, Vector2 cellPos, CellType newCellType, Script_Larbnain larbnain)
     {
         Cell newCell = GetCellByPostion(playerGrid, cellPos);
-        Debug.Log(newCell.cellPosition);
+
         switch (newCellType)
         {
             case CellType.Bedrock:
