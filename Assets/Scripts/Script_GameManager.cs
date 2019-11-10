@@ -374,12 +374,12 @@ public class Script_GameManager : MonoBehaviour
 
     public void SpawnANainPloseur(int playerIdx, Cell targetCell, int sender)
     {
-        if (playersGold[playerIdx] >= nainploseurCost && targetCell.cellType != CellType.Player && targetCell.cellType != CellType.Larbnain && targetCell.cellType != CellType.NainPloseur)
+        if (playersGold[sender] >= nainploseurCost && targetCell.cellType != CellType.Player && targetCell.cellType != CellType.Larbnain && targetCell.cellType != CellType.NainPloseur)
         {
             GameObject newNainPloseur = Instantiate(prefabNainPloseur[playerIdx], targetCell.cellGameObject.transform.position, Quaternion.identity);
             newNainPloseur.GetComponent<Script_NainPloseur>().SetVariables(targetCell, playerIdx);
-            playersGold[playerIdx] -= nainploseurCost;
-            Script_UIManager.Instance.UpdateGoldText(sender, playersGold[playerIdx]);
+            playersGold[sender] -= nainploseurCost;
+            Script_UIManager.Instance.UpdateGoldText(sender, playersGold[sender]);
         }
     }
 
