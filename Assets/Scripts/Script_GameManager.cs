@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum CellType { Empty, Normal, Rare, Bedrock }
+public enum CellType { Empty, Normal, Rare, Bedrock, Larbnain }
 
 public class Script_GameManager : MonoBehaviour
 {
@@ -16,6 +16,11 @@ public class Script_GameManager : MonoBehaviour
 
     public int normalRockLife = 2;
     public int rareRockLife = 3;
+    public int normalRockGoldValue = 5;
+    public int rareRockGoldValue = 5;
+
+    public int larbnainCost = 10;
+    public int nainploseurCost = 10;
 
     public Transform gridParent;
     private int currentDecal = 0;
@@ -25,7 +30,11 @@ public class Script_GameManager : MonoBehaviour
     public GameObject prefabRareRock;
     public GameObject prefabBedRock;
 
+    public GameObject larbnain;
+
     public GameObject prefabPlayer;
+
+    public List<int> playersGold;
 
     public List<Transform> cameraPlayerOne;
 
@@ -46,8 +55,6 @@ public class Script_GameManager : MonoBehaviour
         {
             Destroy(this);
         }
-
-
     }
 
     // Start is called before the first frame update
@@ -143,7 +150,7 @@ public class Script_GameManager : MonoBehaviour
             newPlayer.GetComponent<Script_ControlManager>().SetPlayerNum(i);
             newPlayer.GetComponent<Script_ControlManager>().SetPlayerCell(GetCellByPostion(i, playersStartCell));
             cameraPlayerOne[i].position = new Vector3(newPlayer.transform.position.x, newPlayer.transform.position.y, -10f);
-
+            playersGold.Add(0);
         }
     }
 
@@ -173,6 +180,7 @@ public class Script_GameManager : MonoBehaviour
     {
         Cell newCell = GetCellByPostion(playerGrid, cellPos);
         Vector2 cellSpawnPos;
+
         if (newCell.cellGameObject != null)
         {
             cellSpawnPos = newCell.cellGameObject.transform.position;
@@ -181,6 +189,11 @@ public class Script_GameManager : MonoBehaviour
         else
         {
             cellSpawnPos = newCell.cellPosition;
+        }
+
+        if(newCell.larbnainIn != null)
+        {
+            newCell.larbnainIn.Die();
         }
 
         switch (newCellType)
@@ -209,16 +222,83 @@ public class Script_GameManager : MonoBehaviour
         }
     }
 
+    public void SetCellType(int playerGrid, Vector2 cellPos, CellType newCellType, Script_Larbnain larbnain)
+    {
+        Cell newCell = GetCellByPostion(playerGrid, cellPos);
+        Debug.Log(newCell.cellPosition);
+        switch (newCellType)
+        {
+            case CellType.Bedrock:
+                newCell.cellType = CellType.Bedrock;
+                newCell.larbnainIn = null;
+                break;
+
+            case CellType.Empty:
+                newCell.cellType = CellType.Empty;
+                newCell.larbnainIn = null;
+                break;
+
+            case CellType.Normal:
+                newCell.cellType = CellType.Normal;
+                newCell.rockLife = normalRockLife;
+                newCell.larbnainIn = null;
+                break;
+
+            case CellType.Rare:
+                newCell.cellType = CellType.Rare;
+                newCell.rockLife = rareRockLife;
+                newCell.larbnainIn = null;
+                break;
+
+            case CellType.Larbnain:
+                newCell.cellType = CellType.Larbnain;
+                newCell.larbnainIn = larbnain;
+                break;
+        }
+    }
+
     public void DamageARock(Vector2 cellPos, int damage, int playerIdx)
     {
         Cell cellDig = GetCellByPostion(playerIdx, cellPos);
         cellDig.rockLife -= damage;
-        Debug.Log(cellDig.rockLife);
 
         if(cellDig.rockLife <= 0)
         {
+            int goldAdd = 0;
+
+            switch(cellDig.cellType)
+            {
+                case CellType.Normal:
+                    goldAdd = normalRockGoldValue;
+                    break;
+
+                case CellType.Rare:
+                    goldAdd = rareRockGoldValue;
+                    break;
+            }
+
+            AddGold(goldAdd,playerIdx);
+
             SpawnRock(playerIdx, cellDig.cellPosition, CellType.Empty);
+
         }
+    }
+
+    void AddGold(int goldValue, int playerIdx)
+    {
+        playersGold[playerIdx] += goldValue;
+    }
+
+    public void SpawnALarbnain(int playerIdx, Cell targetCell, Direction larbnainDirection)
+    {
+        if(playersGold[playerIdx] >= larbnainCost)
+        {
+            GameObject newLarbnain = Instantiate(larbnain, targetCell.cellGameObject.transform.position, Quaternion.identity);
+            newLarbnain.GetComponent<Script_Larbnain>().SetVariables(targetCell, playerIdx, larbnainDirection);
+            playersGold[playerIdx] -= larbnainCost;
+
+        }
+        
     }
 }
 
@@ -228,6 +308,7 @@ public class Cell
     public string cellName;
     public Vector2 cellPosition;
     public GameObject cellGameObject;
+    public Script_Larbnain larbnainIn;
     public CellType cellType;
     public int rockLife = 1;
 }
