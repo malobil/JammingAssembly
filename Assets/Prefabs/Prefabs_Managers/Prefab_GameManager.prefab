@@ -51,21 +51,26 @@ MonoBehaviour:
   playerCount: 2
   decalage: 5
   normalRockLife: 2
-  rareRockLife: 3
+  garbageRockLife: 1
+  rareRockLife: 2
   bedRockLife: 8
-  normalRockGoldValue: 5
+  normalRockGoldValue: 2
   rareRockGoldValue: 10
   bedRockGoldValue: 15
-  larbnainCost: 10
-  nainploseurCost: 10
+  larbnainCost: 25
+  nainploseurCost: 15
   gridParent: {fileID: 0}
   prefabNormalRock: {fileID: 7552076401444844458, guid: 45cd61691891d0a418d397ab92167794,
+    type: 3}
+  prefabGarbageRock: {fileID: 4269820809045130370, guid: f64d5a43e81f6034bba623673de81cc2,
     type: 3}
   prefabGround: {fileID: 4269820809045130370, guid: 1663012897549b84a91347c571891a9a,
     type: 3}
   prefabRareRock: {fileID: 4269820809045130370, guid: 2cf0461c26146b84ca86bee1f6e084ca,
     type: 3}
   prefabBedRock: {fileID: 4269820809045130370, guid: 67249c0a2809ce34f8590188a5579108,
+    type: 3}
+  prefabNainPloseur: {fileID: 7929123093748710472, guid: 7b5c0ea9c208500438696e505ced0225,
     type: 3}
   larbnains:
   - {fileID: 8541173700959554556, guid: 942f97459104b9a4dbee54cac69f34b5, type: 3}
