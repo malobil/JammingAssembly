@@ -173,7 +173,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -247,7 +247,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -376,6 +376,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 259933993520226556, guid: 0341d247310bf494cb04959736cd4729,
         type: 3}
+      propertyPath: cameras.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 259933993520226556, guid: 0341d247310bf494cb04959736cd4729,
+        type: 3}
       propertyPath: gridParent
       value: 
       objectReference: {fileID: 1742404037}
@@ -389,5 +394,35 @@ PrefabInstance:
       propertyPath: cameraPlayerOne.Array.data[1]
       value: 
       objectReference: {fileID: 109749946}
+    - target: {fileID: 259933993520226556, guid: 0341d247310bf494cb04959736cd4729,
+        type: 3}
+      propertyPath: chanceRareRock
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 259933993520226556, guid: 0341d247310bf494cb04959736cd4729,
+        type: 3}
+      propertyPath: chanceBedRock
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 259933993520226556, guid: 0341d247310bf494cb04959736cd4729,
+        type: 3}
+      propertyPath: cameras.Array.data[0]
+      value: 
+      objectReference: {fileID: 846047784}
+    - target: {fileID: 259933993520226556, guid: 0341d247310bf494cb04959736cd4729,
+        type: 3}
+      propertyPath: cameras.Array.data[1]
+      value: 
+      objectReference: {fileID: 109749946}
+    - target: {fileID: 259933993520226556, guid: 0341d247310bf494cb04959736cd4729,
+        type: 3}
+      propertyPath: cameraUnzoomZone
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 259933993520226556, guid: 0341d247310bf494cb04959736cd4729,
+        type: 3}
+      propertyPath: cameraUnzoomStep
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0341d247310bf494cb04959736cd4729, type: 3}

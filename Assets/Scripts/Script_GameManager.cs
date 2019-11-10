@@ -36,7 +36,9 @@ public class Script_GameManager : MonoBehaviour
 
     public List<int> playersGold;
 
-    public List<Transform> cameraPlayerOne;
+    public List<Transform> cameras;
+    public float cameraUnzoomStep = 5f;
+    public float cameraUnzoomZone = 20f;
 
 
     [Range(0, 100)]
@@ -65,7 +67,7 @@ public class Script_GameManager : MonoBehaviour
     {
         CreateGrid();
         AttributeBaseMap();
-        //AttributeBedRock();
+        AttributeBedRock();
         SpawnMap();
         DuplicateMap();
         SpawnPlayers();
@@ -105,7 +107,7 @@ public class Script_GameManager : MonoBehaviour
 
                 if(rdm <= chanceBedRock)
                 {
-                    GetCellByPostion(0, playersGrids[0].gridCells[i].cellPosition).cellType = CellType.Bedrock;
+                     GetCellByPostion(0, playersGrids[0].gridCells[i].cellPosition).cellType = CellType.Rare;
                 }
                 else if (rdm <= chanceRareRock)
                 {
@@ -156,7 +158,7 @@ public class Script_GameManager : MonoBehaviour
             GameObject newPlayer = Instantiate(prefabPlayer, GetCellByPostion(i, playersStartCell).cellGameObject.transform.position, Quaternion.identity);
             newPlayer.GetComponent<Script_ControlManager>().SetPlayerNum(i);
             newPlayer.GetComponent<Script_ControlManager>().SetPlayerCell(GetCellByPostion(i, playersStartCell));
-            cameraPlayerOne[i].position = new Vector3(newPlayer.transform.position.x, newPlayer.transform.position.y, -10f);
+            cameras[i].position = new Vector3(newPlayer.transform.position.x, newPlayer.transform.position.y, -10f);
             playersGold.Add(0);
         }
     }
@@ -187,10 +189,25 @@ public class Script_GameManager : MonoBehaviour
     {
         Cell newCell = GetCellByPostion(playerGrid, cellPos);
         Vector2 cellSpawnPos;
+        Vector2 cellScreenPos;
 
         if (newCell.cellGameObject != null)
         {
             cellSpawnPos = newCell.cellGameObject.transform.position;
+            cellScreenPos = cameras[playerGrid].GetComponent<Camera>().WorldToViewportPoint(newCell.cellGameObject.transform.position);
+            Debug.Log(cellScreenPos);
+
+            if(cellScreenPos.x <= 0f)
+            {
+              //UnzoomCam(playerGrid);
+            }
+
+            if (cellScreenPos.x >= 1f)
+            {
+              //  UnzoomCam(playerGrid);
+            }
+
+            Debug.Log(cellScreenPos);
             Destroy(newCell.cellGameObject);
         }
         else
@@ -213,6 +230,7 @@ public class Script_GameManager : MonoBehaviour
             case CellType.Empty:
                 newCell.cellGameObject = Instantiate(prefabGround, cellSpawnPos, Quaternion.identity, gridParent);
                 newCell.cellType = CellType.Empty;
+              
                 break;
 
             case CellType.Normal:
@@ -305,7 +323,11 @@ public class Script_GameManager : MonoBehaviour
             playersGold[playerIdx] -= larbnainCost;
 
         }
-        
+    }
+
+    void UnzoomCam(int playerIdx)
+    {
+        cameras[playerIdx].GetComponent<Camera>().orthographicSize += cameraUnzoomStep;
     }
 }
 

@@ -69,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 999
   m_Sprite: {fileID: 3429569086244610218, guid: 02f564558e6c2524fb14619a712799a8,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -110,6 +110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6597349805030466985}
+  - component: {fileID: 1549047979032810211}
   m_Layer: 0
   m_Name: Prefab_Larbnain_P1
   m_TagString: Untagged
@@ -132,3 +133,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1549047979032810211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8541173700959554556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db49fa32457596b41aa5c46d82850b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 5
+  damageToExplode: 2
+  damage: 1
+  moveSpeed: 0.5
+  playerDwarf: 0
+  currentDirection: 0
+  larbnainCurrentCell:
+    cellName: 
+    cellPosition: {x: 0, y: 0}
+    cellGameObject: {fileID: 0}
+    larbnainIn: {fileID: 0}
+    cellType: 0
+    rockLife: 1
