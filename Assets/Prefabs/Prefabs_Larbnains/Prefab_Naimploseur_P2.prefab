@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 243295938423630275}
   - component: {fileID: 4065446129744143325}
+  - component: {fileID: 1495788301657631545}
   m_Layer: 0
   m_Name: Prefab_Naimploseur_P2
   m_TagString: Untagged
@@ -128,6 +129,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1495788301657631545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4061546163428143761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 343810bac81d94340b008f9eccc7601b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToExplosion: 5
+  life: 1
+  playerDwarf: 0
+  prefabExplosion: {fileID: 8052183978148925942, guid: 39c09485bb7a84c498fb36cd7731496d,
+    type: 3}
+  animatorComp: {fileID: 0}
 --- !u!1 &8398896352307974667
 GameObject:
   m_ObjectHideFlags: 0

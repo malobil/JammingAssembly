@@ -70,8 +70,9 @@ MonoBehaviour:
     type: 3}
   prefabBedRock: {fileID: 4269820809045130370, guid: 67249c0a2809ce34f8590188a5579108,
     type: 3}
-  prefabNainPloseur: {fileID: 7929123093748710472, guid: 7b5c0ea9c208500438696e505ced0225,
-    type: 3}
+  prefabNainPloseur:
+  - {fileID: 4061546163428143761, guid: 7da276f60a29d7d468aa3f7c3fc3fe76, type: 3}
+  - {fileID: 7929123093748710472, guid: 7b5c0ea9c208500438696e505ced0225, type: 3}
   larbnains:
   - {fileID: 8541173700959554556, guid: 942f97459104b9a4dbee54cac69f34b5, type: 3}
   - {fileID: 8541173700959554556, guid: 6f4d5f40907230a4ca3a3be3ca04941c, type: 3}

@@ -10,10 +10,12 @@ public class Script_NainPloseur : MonoBehaviour
     public GameObject prefabExplosion;
     public Animator animatorComp;
     private Cell currentCell;
+    private CellType currentCellPreviousType;
 
     public void SetVariables(Cell startCell, int player)
     {
         currentCell = startCell;
+        currentCellPreviousType = startCell.cellType;
         Script_GameManager.Instance.SetCellType(player, startCell.cellPosition, CellType.NainPloseur,null,this);
         playerDwarf = player;
     }
@@ -35,7 +37,7 @@ public class Script_NainPloseur : MonoBehaviour
     {
         life--;
 
-        if (life-- <= 0)
+        if (life <= 0)
         {
             Die();
         }
@@ -43,7 +45,7 @@ public class Script_NainPloseur : MonoBehaviour
 
     void Die()
     {
-        Script_GameManager.Instance.SetCellType(playerDwarf, currentCell.cellPosition, CellType.Empty, null,null);
+        Script_GameManager.Instance.SetCellType(playerDwarf, currentCell.cellPosition, currentCellPreviousType, null,null);
         Destroy(gameObject);
     }
 
@@ -61,42 +63,42 @@ public class Script_NainPloseur : MonoBehaviour
         Cell cellTopLeftPos = Script_GameManager.Instance.GetCellByPostion(playerDwarf, new Vector2(currentCell.cellPosition.x + 1, currentCell.cellPosition.y + 1));
         Cell cellTopRightPos = Script_GameManager.Instance.GetCellByPostion(playerDwarf, new Vector2(currentCell.cellPosition.x + 1, currentCell.cellPosition.y - 1));
 
-        if(cellLeftPos.cellType == CellType.Empty)
+        if(cellLeftPos.cellType != CellType.Player && cellLeftPos.cellType != CellType.Larbnain && cellLeftPos.cellType != CellType.NainPloseur)
         {
             Script_GameManager.Instance.SpawnRock(playerDwarf, cellLeftPos.cellPosition, CellType.Garbage);
         }
 
-        if (cellRightPos.cellType == CellType.Empty)
+        if (cellRightPos.cellType != CellType.Player && cellRightPos.cellType != CellType.Larbnain && cellRightPos.cellType != CellType.NainPloseur)
         {
             Script_GameManager.Instance.SpawnRock(playerDwarf, cellRightPos.cellPosition, CellType.Garbage);
         }
 
-        if (cellUpPos.cellType == CellType.Empty)
+        if (cellUpPos.cellType != CellType.Player && cellUpPos.cellType != CellType.Larbnain && cellUpPos.cellType != CellType.NainPloseur)
         {
             Script_GameManager.Instance.SpawnRock(playerDwarf, cellUpPos.cellPosition, CellType.Garbage);
         }
 
-        if (cellDownPos.cellType == CellType.Empty)
+        if (cellDownPos.cellType != CellType.Player && cellDownPos.cellType != CellType.Larbnain && cellDownPos.cellType != CellType.NainPloseur)
         {
             Script_GameManager.Instance.SpawnRock(playerDwarf, cellDownPos.cellPosition, CellType.Garbage);
         }
 
-        if (cellDownRightPos.cellType == CellType.Empty)
+        if (cellDownRightPos.cellType != CellType.Player && cellDownRightPos.cellType != CellType.Larbnain && cellDownRightPos.cellType != CellType.NainPloseur)
         {
             Script_GameManager.Instance.SpawnRock(playerDwarf, cellDownRightPos.cellPosition, CellType.Garbage);
         }
 
-        if (cellDownLeftPos.cellType == CellType.Empty)
+        if (cellDownLeftPos.cellType != CellType.Player && cellDownLeftPos.cellType != CellType.Larbnain && cellDownLeftPos.cellType != CellType.NainPloseur)
         {
             Script_GameManager.Instance.SpawnRock(playerDwarf, cellDownLeftPos.cellPosition, CellType.Garbage);
         }
 
-        if (cellTopLeftPos.cellType == CellType.Empty)
+        if (cellTopLeftPos.cellType != CellType.Player && cellTopLeftPos.cellType != CellType.Larbnain && cellTopLeftPos.cellType != CellType.NainPloseur)
         {
             Script_GameManager.Instance.SpawnRock(playerDwarf, cellTopLeftPos.cellPosition, CellType.Garbage);
         }
 
-        if (cellTopRightPos.cellType == CellType.Empty)
+        if (cellTopRightPos.cellType != CellType.Player && cellTopRightPos.cellType != CellType.Larbnain && cellTopRightPos.cellType != CellType.NainPloseur)
         {
             Script_GameManager.Instance.SpawnRock(playerDwarf, cellTopRightPos.cellPosition, CellType.Garbage);
         }

@@ -76,11 +76,11 @@ public class Script_ControlManager : MonoBehaviour
         switch(playerDwarf)
         {
             case 0:
-                Script_GameManager.Instance.SpawnANainPloseur(1, Script_GameManager.Instance.GetCellByPostion(1, playerCurrentCell.cellPosition)) ;
+                Script_GameManager.Instance.SpawnANainPloseur(1, Script_GameManager.Instance.GetCellByPostion(1, playerCurrentCell.cellPosition),playerDwarf) ;
                 break;
 
             case 1:
-                Script_GameManager.Instance.SpawnANainPloseur(0, Script_GameManager.Instance.GetCellByPostion(0, playerCurrentCell.cellPosition));
+                Script_GameManager.Instance.SpawnANainPloseur(0, Script_GameManager.Instance.GetCellByPostion(0, playerCurrentCell.cellPosition), playerDwarf);
                 break;
         }
     }
