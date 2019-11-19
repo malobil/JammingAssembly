@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum Direction { up, down, left, right }
+public enum Gamepad { PS4, XBOX }
 public class Script_ControlManager : MonoBehaviour
 
 {
@@ -19,56 +20,134 @@ public class Script_ControlManager : MonoBehaviour
     public List<AudioClip> digNormals;
     public AudioClip digRare;
 
+    private Gamepad gamepadType;
+
+    private void Start()
+    {
+        string[] gamepads = Input.GetJoystickNames();
+
+        for(int i = 0; i < gamepads.Length; i++)
+        {
+            if(i == playerDwarf)
+            {
+                if(gamepads[i].Length == 19)
+                {
+                    gamepadType = Gamepad.PS4;
+                    Debug.Log("PS4 for player" + i);
+                }
+                else if(gamepads[i].Length == 33)
+                {
+                    gamepadType = Gamepad.XBOX;
+                    Debug.Log("Xbox for player" + i);
+                }
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxis("Ps4_Horizontal_" + playerDwarf);
-        float vertical = Input.GetAxis("Ps4_Vertical_" +  playerDwarf);
-
-        if (canMove == true)
+        if(gamepadType == Gamepad.PS4)
         {
-            if (horizontal > 0f)
+            float horizontal = Input.GetAxis("Ps4_Horizontal_" + playerDwarf);
+            float vertical = Input.GetAxis("Ps4_Vertical_" + playerDwarf);
+
+            if (canMove == true)
             {
-                currentDirection = Direction.right;
-                associateAnimator.SetInteger("IdleState", 2);
-                SetCurrentTarget();
-                Move();
-            }
-            else if (horizontal < 0f)
-            {
-                currentDirection = Direction.left;
-                associateAnimator.SetInteger("IdleState", 3);
-                SetCurrentTarget();
-                Move();
-            }
-            else if (vertical > 0f)
-            {
-                currentDirection = Direction.up;
-                associateAnimator.SetInteger("IdleState", 1);
-                SetCurrentTarget();
-                Move();
-            }
-            else if (vertical < 0f)
-            {
-                currentDirection = Direction.down;
-                associateAnimator.SetInteger("IdleState", 0);
-                SetCurrentTarget();
-                Move();
-            }
-            else if (Input.GetButtonDown("Ps4_Miner_" + playerDwarf))
-            {
-                associateAnimator.SetTrigger("Dig");
-                canMove = false;
-            }
-            else if (Input.GetButtonDown("Ps4_Larbnain_" + playerDwarf))
-            {
-                SpawnLarbnain();
-            }
-            else if (Input.GetButtonDown("Ps4_NainPloseur_" + playerDwarf))
-            {
-                SpawnNainPloseur();
+                if (horizontal > 0f)
+                {
+                    currentDirection = Direction.right;
+                    associateAnimator.SetInteger("IdleState", 2);
+                    SetCurrentTarget();
+                    Move();
+                }
+                else if (horizontal < 0f)
+                {
+                    currentDirection = Direction.left;
+                    associateAnimator.SetInteger("IdleState", 3);
+                    SetCurrentTarget();
+                    Move();
+                }
+                else if (vertical > 0f)
+                {
+                    currentDirection = Direction.up;
+                    associateAnimator.SetInteger("IdleState", 1);
+                    SetCurrentTarget();
+                    Move();
+                }
+                else if (vertical < 0f)
+                {
+                    currentDirection = Direction.down;
+                    associateAnimator.SetInteger("IdleState", 0);
+                    SetCurrentTarget();
+                    Move();
+                }
+                else if (Input.GetButtonDown("Ps4_Miner_" + playerDwarf))
+                {
+                    associateAnimator.SetTrigger("Dig");
+                    canMove = false;
+                }
+                else if (Input.GetButtonDown("Ps4_Larbnain_" + playerDwarf))
+                {
+                    SpawnLarbnain();
+                }
+                else if (Input.GetButtonDown("Ps4_NainPloseur_" + playerDwarf))
+                {
+                    SpawnNainPloseur();
+                }
             }
         }
+        else if(gamepadType == Gamepad.XBOX)
+        {
+            float horizontal = Input.GetAxis("Xbox_Horizontal_" + playerDwarf);
+            float vertical = Input.GetAxis("Xbox_Vertical_" + playerDwarf);
+
+            if (canMove == true)
+            {
+                if (horizontal > 0f)
+                {
+                    currentDirection = Direction.right;
+                    associateAnimator.SetInteger("IdleState", 2);
+                    SetCurrentTarget();
+                    Move();
+                }
+                else if (horizontal < 0f)
+                {
+                    currentDirection = Direction.left;
+                    associateAnimator.SetInteger("IdleState", 3);
+                    SetCurrentTarget();
+                    Move();
+                }
+                else if (vertical > 0f)
+                {
+                    currentDirection = Direction.up;
+                    associateAnimator.SetInteger("IdleState", 1);
+                    SetCurrentTarget();
+                    Move();
+                }
+                else if (vertical < 0f)
+                {
+                    currentDirection = Direction.down;
+                    associateAnimator.SetInteger("IdleState", 0);
+                    SetCurrentTarget();
+                    Move();
+                }
+                else if (Input.GetButtonDown("Xbox_Miner_" + playerDwarf))
+                {
+                    associateAnimator.SetTrigger("Dig");
+                    canMove = false;
+                }
+                else if (Input.GetButtonDown("Xbox_Larbnain_" + playerDwarf))
+                {
+                    SpawnLarbnain();
+                }
+                else if (Input.GetButtonDown("Xbox_NainPloseur_" + playerDwarf))
+                {
+                    SpawnNainPloseur();
+                }
+            }
+        }
+        
     }
 
     void SpawnNainPloseur()
