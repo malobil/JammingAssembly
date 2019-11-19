@@ -22,32 +22,27 @@ public class Script_ControlManager : MonoBehaviour
 
     private Gamepad gamepadType;
 
-    private void Start()
-    {
-        string[] gamepads = Input.GetJoystickNames();
-
-        for(int i = 0; i < gamepads.Length; i++)
-        {
-            if(i == playerDwarf)
-            {
-                if(gamepads[i].Length == 19)
-                {
-                    gamepadType = Gamepad.PS4;
-                    Debug.Log("PS4 for player" + i);
-                }
-                else if(gamepads[i].Length == 33)
-                {
-                    gamepadType = Gamepad.XBOX;
-                    Debug.Log("Xbox for player" + i);
-                }
-            }
-        }
-    }
-
     // Update is called once per frame
     void Update()
     {
-        if(gamepadType == Gamepad.PS4)
+        string[] gamepads = Input.GetJoystickNames();
+
+        for (int i = 0; i < gamepads.Length; i++)
+        {
+            if (i == playerDwarf)
+            {
+                if (gamepads[i].Length == 19)
+                {
+                    gamepadType = Gamepad.PS4;
+                }
+                else if (gamepads[i].Length == 33)
+                {
+                    gamepadType = Gamepad.XBOX;
+                }
+            }
+        }
+
+        if (gamepadType == Gamepad.PS4)
         {
             float horizontal = Input.GetAxis("Ps4_Horizontal_" + playerDwarf);
             float vertical = Input.GetAxis("Ps4_Vertical_" + playerDwarf);
