@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum Direction { up, down, left, right }
-public enum Gamepad { PS4, XBOX }
+
 public class Script_ControlManager : MonoBehaviour
 
 {
@@ -20,29 +20,13 @@ public class Script_ControlManager : MonoBehaviour
     public List<AudioClip> digNormals;
     public AudioClip digRare;
 
-    private Gamepad gamepadType;
 
     // Update is called once per frame
     void Update()
     {
-        string[] gamepads = Input.GetJoystickNames();
+       
 
-        for (int i = 0; i < gamepads.Length; i++)
-        {
-            if (i == playerDwarf)
-            {
-                if (gamepads[i].Length == 19)
-                {
-                    gamepadType = Gamepad.PS4;
-                }
-                else if (gamepads[i].Length == 33)
-                {
-                    gamepadType = Gamepad.XBOX;
-                }
-            }
-        }
-
-        if (gamepadType == Gamepad.PS4)
+        if (Script_GameManager.Instance.GetPlayerGamePad(playerDwarf) == Gamepad.PS4)
         {
             float horizontal = Input.GetAxis("Ps4_Horizontal_" + playerDwarf);
             float vertical = Input.GetAxis("Ps4_Vertical_" + playerDwarf);
@@ -92,7 +76,7 @@ public class Script_ControlManager : MonoBehaviour
                 }
             }
         }
-        else if(gamepadType == Gamepad.XBOX)
+        else if(Script_GameManager.Instance.GetPlayerGamePad(playerDwarf) == Gamepad.XBOX)
         {
             float horizontal = Input.GetAxis("Xbox_Horizontal_" + playerDwarf);
             float vertical = Input.GetAxis("Xbox_Vertical_" + playerDwarf);

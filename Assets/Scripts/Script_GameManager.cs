@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum CellType { Empty, Normal, Rare, Bedrock, Larbnain, NainPloseur, Garbage, Player }
-
+public enum Gamepad { PS4, XBOX }
 public class Script_GameManager : MonoBehaviour
 {
     public static Script_GameManager Instance { get; private set; }
@@ -59,6 +59,8 @@ public class Script_GameManager : MonoBehaviour
     private List<Grid> playersGrids = new List<Grid>();
     private Vector2 playersStartCell;
 
+    private Gamepad[] playersGamepads = new Gamepad[2] ;
+
     private void Awake()
     {
         if (Instance == null)
@@ -85,7 +87,21 @@ public class Script_GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(currentGameTime > 0)
+        string[] gamepads = Input.GetJoystickNames();
+
+        for (int i = 0; i < gamepads.Length; i++)
+        {
+                if (gamepads[i].Length == 19)
+                {
+                    playersGamepads[i] = Gamepad.PS4;
+                }
+                else if (gamepads[i].Length == 33)
+                {
+                    playersGamepads[i] = Gamepad.XBOX;
+                }
+        }
+
+        if (currentGameTime > 0)
         {
             currentGameTime -= Time.deltaTime;
             Script_UIManager.Instance.UpdateTimer(currentGameTime);
@@ -412,6 +428,11 @@ public class Script_GameManager : MonoBehaviour
         }
 
         return cellNum;
+    }
+
+    public Gamepad GetPlayerGamePad(int playerIdx)
+    {
+        return playersGamepads[playerIdx];
     }
 }
 

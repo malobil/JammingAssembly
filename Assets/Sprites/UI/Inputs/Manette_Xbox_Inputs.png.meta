@@ -1,0 +1,835 @@
+fileFormatVersion: 2
+guid: 29ad07c184d886240a9f99e9c9a1f57c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6259420130211025515
+    second: Manette_Xbox_Inputs_0
+  - first:
+      213: -105929500003231221
+    second: Manette_Xbox_Inputs_1
+  - first:
+      213: 9048790210754418854
+    second: Manette_Xbox_Inputs_2
+  - first:
+      213: -4033398739456027009
+    second: Manette_Xbox_Inputs_3
+  - first:
+      213: -4271389960493177154
+    second: Manette_Xbox_Inputs_4
+  - first:
+      213: 4314773150713795339
+    second: Manette_Xbox_Inputs_5
+  - first:
+      213: 8247660737569469355
+    second: Manette_Xbox_Inputs_6
+  - first:
+      213: -2730104112194860561
+    second: Manette_Xbox_Inputs_7
+  - first:
+      213: -3301592626178508079
+    second: Manette_Xbox_Inputs_8
+  - first:
+      213: -438938025710658448
+    second: Manette_Xbox_Inputs_9
+  - first:
+      213: -327671190730529706
+    second: Manette_Xbox_Inputs_10
+  - first:
+      213: 7459189083348382780
+    second: Manette_Xbox_Inputs_11
+  - first:
+      213: -525309619402110683
+    second: Manette_Xbox_Inputs_12
+  - first:
+      213: 2645744735672249901
+    second: Manette_Xbox_Inputs_13
+  - first:
+      213: -471061419140397522
+    second: Manette_Xbox_Inputs_14
+  - first:
+      213: 2424486470973115711
+    second: Manette_Xbox_Inputs_15
+  - first:
+      213: 8610143264231323190
+    second: Manette_Xbox_Inputs_16
+  - first:
+      213: 1637391739127752468
+    second: Manette_Xbox_Inputs_17
+  - first:
+      213: 433422007764358213
+    second: Manette_Xbox_Inputs_18
+  - first:
+      213: 4767874939680736459
+    second: Manette_Xbox_Inputs_19
+  - first:
+      213: -8281917697324427433
+    second: Manette_Xbox_Inputs_20
+  - first:
+      213: 4265801259639522699
+    second: Manette_Xbox_Inputs_21
+  - first:
+      213: -2626782866698405851
+    second: Manette_Xbox_Inputs_22
+  - first:
+      213: -532913866316872062
+    second: Manette_Xbox_Inputs_23
+  - first:
+      213: 7252181095012666147
+    second: Manette_Xbox_Inputs_24
+  - first:
+      213: 1532955751754669277
+    second: Manette_Xbox_Inputs_25
+  - first:
+      213: -4836910088178220789
+    second: Manette_Xbox_Inputs_26
+  - first:
+      213: -4558560202713594657
+    second: Manette_Xbox_Inputs_27
+  - first:
+      213: -2818908800220574933
+    second: Manette_Xbox_Inputs_28
+  - first:
+      213: 7432302835276455090
+    second: Manette_Xbox_Inputs_29
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 155
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 371c80c34a02f7646af6a21c1eaafcc9
+      internalID: 6259420130211025515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_1
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 155
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48a1474eea899b0499935387dae957a8
+      internalID: -105929500003231221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_2
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2652bebafc0d2454c8c0ee7ae5233699
+      internalID: 9048790210754418854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_3
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c238eab5693dc344b92638a7876e087e
+      internalID: -4033398739456027009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_4
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a29c97e06556c0841b776c01ef5f3d09
+      internalID: -4271389960493177154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_5
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a32054f01cc3a54ebfa8bdebd3835c2
+      internalID: 4314773150713795339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_6
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85cd3c8a44528ec4eab18afd570507be
+      internalID: 8247660737569469355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 114
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37dc637cbd1e6d54c8b288c08d583eed
+      internalID: -2730104112194860561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_8
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 115
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc9e1de8ba7f1364b9b50d1f292604d3
+      internalID: -3301592626178508079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_9
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 115
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d826a2b66e9488643a8fc23bc25327b1
+      internalID: -438938025710658448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_10
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 115
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad09b07a4128d047b7e5db4d9fe05a1
+      internalID: -327671190730529706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_11
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 115
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b171e6815b6ed1469f90b813f19e01a
+      internalID: 7459189083348382780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_12
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 115
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7c200495d15f6241b1f35b395f08760
+      internalID: -525309619402110683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_13
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 115
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e55e554dd9283754385e82cae25759a8
+      internalID: 2645744735672249901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 81
+        width: 48
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2e6057640bf37c4b905fea9bd11a78e
+      internalID: -471061419140397522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_15
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 54
+        width: 25
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19daa99cca086bf4b944bf8ae60e78e7
+      internalID: 2424486470973115711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_16
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 54
+        width: 25
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b3b8eb6295ef614d8241859de6a024b
+      internalID: 8610143264231323190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_17
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 62
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f9e959075e99ff47b41fc34e3e0d087
+      internalID: 1637391739127752468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_18
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 62
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 413cbe55def6e9244afedcde3227c7f7
+      internalID: 433422007764358213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_19
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 83
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dff706abf053c048a19c8bebbff7b20
+      internalID: 4767874939680736459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_20
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 83
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10a491e8a25fc6d46ac85511ddfc7389
+      internalID: -8281917697324427433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_21
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 50
+        width: 48
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7e2a5540a371b74e95511f323ec311d
+      internalID: 4265801259639522699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_22
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 62
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43c1859367ec6f0449ed5f9ea041d2e6
+      internalID: -2626782866698405851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_23
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 62
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2383e69e3d91b094a97a97543141537f
+      internalID: -532913866316872062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_24
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2
+        width: 25
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 275f238e9a478e045be1f1c921ae078d
+      internalID: 7252181095012666147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_25
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 2
+        width: 25
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 752777b0b7ceda240b8a8be2cd929f39
+      internalID: 1532955751754669277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_26
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 2
+        width: 22
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4d079c186172ac4fab1cefd25a4e089
+      internalID: -4836910088178220789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_27
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 2
+        width: 22
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d938821721cd9ca4aacf76c426589f1c
+      internalID: -4558560202713594657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_28
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 28
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da883d54a4fc93d46b69fbc5302ebaf7
+      internalID: -2818908800220574933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manette_Xbox_Inputs_29
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 5
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8625f7f561cc12c4292ff719c941e9ae
+      internalID: 7432302835276455090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
